@@ -1,0 +1,20 @@
+<!--pages/index/template/recommend/recommend.wxml-->
+<template name="recommend">
+  <view class='bannerBox'>
+    <swiper indicator-dots="true"
+            indicator-active-color="#fff"
+            autoplay="true"
+            circular="true"
+            class='bannerSwiper'>
+      <block wx:for="{{bannerImgArr}}" wx:key="{{*index}}">
+        <swiper-item>
+          <image class='indexbannerimg' 
+                 src='{{item.pic}}'
+                 lazy-load="true"
+                 mode	="widthFix"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    你大爷
+  </view>
+</template>

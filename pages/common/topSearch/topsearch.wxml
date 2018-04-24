@@ -1,0 +1,10 @@
+<!--pages/common/topSearch/topsearch.wxml-->
+<template name='topsearch'>
+  <view class='topSearch'>
+    <navigator class='topsearchLeft' url='../search/search'>
+      <view class='iconfont icon-sousuo sousuo'></view>
+      <text>很好听哦！</text>
+    </navigator>
+    <view class='iconfont icon-playing playicon'></view>
+  </view>
+</template>

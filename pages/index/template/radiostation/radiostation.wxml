@@ -1,0 +1,4 @@
+<!--pages/index/template/radiostation/radiostation.wxml-->
+<template name="radiostation">
+  <view>我到</view>
+</template>

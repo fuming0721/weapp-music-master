@@ -1,0 +1,29 @@
+<!--index.wxml-->
+<import src='../common/topSearch/topsearch.wxml' />
+<!--顶部搜索-->
+<import src='./template/recommend/recommend.wxml' />
+<!--个性推荐-->
+<import src='./template/radiostation/radiostation.wxml' />
+<!--主播电台-->
+<view class="container">
+  <view class='indextop'>
+    <template is="topsearch" />
+    <view class="indexNav">
+      <block wx:for="{{tabs}}" wx:key="*this">
+        <view id="{{index}}" class="indexnavItem" bindtap="tabClick"> {{item}}</view>
+      </block>
+      <view class='indexnavline_box' style="left: {{sliderOffset}}rpx;">
+        <view class="indexnavline"></view>
+      </view>
+    </view>
+  </view>
+
+  <swiper current="{{activeIndex}}" bindchange="swipeChange" duration="300">
+    <swiper-item>
+      <template is="recommend" data="{{bannerImgArr}}"/> 
+    </swiper-item>
+    <swiper-item>
+      <template is="radiostation" />
+    </swiper-item>
+  </swiper>
+</view>

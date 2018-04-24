@@ -1,0 +1,11 @@
+/* pages/index/template/recommend/recommend.wxss */
+
+.bannerBox{
+  width: 100%;
+}
+.bannerSwiper{
+  width: 100%;
+}
+.indexbannerimg{
+  width: 100%;
+}

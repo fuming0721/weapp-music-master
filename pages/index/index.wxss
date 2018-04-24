@@ -1,0 +1,47 @@
+/**index.wxss**/
+@import "../common/topSearch/topsearch";
+@import "./template/recommend/recommend";
+
+.container {
+  padding-top: 140rpx;
+}
+
+.indextop {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+.indexNav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 70rpx;
+  background-color: #d81e06;
+  position: relative;
+}
+
+.indexnavItem {
+  width: 50%;
+  text-align: center;
+  line-height: 70rpx;
+  color: #fff;
+  font-size: 26rpx;
+}
+
+.indexnavline_box {
+  width: 50%;
+  position: absolute;
+  bottom: 3px;
+  height: 2px;
+  left: 188px;
+}
+
+.indexnavline {
+  width: 30px;
+  height: 2px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
