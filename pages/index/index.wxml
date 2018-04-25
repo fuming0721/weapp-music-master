@@ -20,7 +20,7 @@
 
   <swiper class='indexPage' current="{{activeIndex}}" bindchange="swipeChange" duration="300">
     <swiper-item>
-      <template is="recommend" data="{{bannerImgArr, iconNav, recommendMusicList, recommendMVList}}"/> 
+      <template is="recommend" data="{{bannerImgArr, iconNav, recommendMusicList, recommendMVList, privateContentList}}"/> 
     </swiper-item>
     <swiper-item>
       <template is="radiostation" />

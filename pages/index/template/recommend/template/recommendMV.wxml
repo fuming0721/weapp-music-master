@@ -2,7 +2,7 @@
 <template name="recommendMV">
   <view class='recommendMV_item'>
     <view class='recommendMV_item_imgbox'>
-      <image src='{{item.picUrl}}' class='recommendMV_item_img' mode="widthFix"></image>
+      <image src='{{item.picUrl}}' class='recommendMV_item_img' mode="widthFix" lazy-load='true'></image>
       <view class='playCount_box'>
         <view class='iconfont icon-shipin4 playCount_icon'></view>
         <text class='playCount'>{{filter.over10000(item.playCount)}}</text>

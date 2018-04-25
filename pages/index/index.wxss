@@ -8,7 +8,7 @@
 }
 .indexPage{
   bottom: 0;
-  height: 8000rpx;
+  height:2700rpx;
 }
 .indextop {
   width: 100%;
@@ -71,8 +71,9 @@
 .musicListitem_name{
   font-size: 26rpx;
   margin: 5px 0;
-  height: 80rpx;
+  line-height: 40rpx;
   overflow: hidden;
+  max-height: 80rpx;
   padding: 0 3px;
 }
 .playCount_box{
@@ -104,4 +105,24 @@
 .recommendMV_item_img{
   width: 100%;
   height: 100%;
+}
+.privateListitem{
+  width: 360rpx;
+}
+.privateListitem:first-child{
+  width: 730rpx;
+}
+.privateListitem_imgbox{
+  width: 100%;
+  position: relative;
+  height: 202rpx;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.privateListitem:first-child .privateListitem_imgbox{
+  width: 100%;
+  height: 270rpx;
+}
+.privateListitem_img{
+  width: 100%;
 }

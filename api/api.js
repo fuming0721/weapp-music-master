@@ -25,14 +25,19 @@ const wxRequst = (params, url) => {
   })
 }
 
-
+// banner图片
 const getBannerImg = (parmas) => { wxRequst(parmas, baseUrl + 'banner') };
+// 推荐音乐
 const getRecommendMusicList = (parmas) => { wxRequst(parmas, baseUrl + 'personalized') };
+// 推荐 MV
 const getRecommendMV = (parmas) => { wxRequst(parmas, baseUrl + 'personalized/mv') };
+// 独家放送
+const getPrivateContent = (parmas) => { wxRequst(parmas, baseUrl + 'personalized/privatecontent')};
 
 
 module.exports = {
   getBannerImg,
   getRecommendMusicList,
-  getRecommendMV
+  getRecommendMV,
+  getPrivateContent
 }

@@ -1,0 +1,13 @@
+<template name="privateContent">
+  <view class='privateListitem'>
+    <view class='privateListitem_imgbox'>
+      <block wx:if="{{index == 0}}">
+        <image src='{{item.picUrl}}' class='privateListitem_img' mode="widthFix" lazy-load='true'></image>
+      </block>
+      <block wx:else>
+        <image src='{{item.sPicUrl}}' class='privateListitem_img' mode="widthFix" lazy-load='true'></image>
+      </block>
+    </view>
+    <view class='musicListitem_name'>{{item.name}}</view>
+  </view>
+</template>

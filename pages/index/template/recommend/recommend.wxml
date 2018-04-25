@@ -1,6 +1,7 @@
 <!--pages/index/template/recommend/recommend.wxml-->
 <import src="./template/musicitem" />
 <import src="./template/recommendMV" />
+<import src="./template/privateContentItem" />
 <template name="recommend">
   <view class='recommend'>
     <view class='bannerBox'>
@@ -9,7 +10,7 @@
         <block wx:for="{{bannerImgArr}}" wx:key="{{*index}}">
           <swiper-item class='bannerItem'>
             <view class='bannerItembox'>
-              <image class='indexbannerimg' src='{{item.pic}}' lazy-load="true" mode="widthFix"></image>
+              <image class='indexbannerimg' src='{{item.pic}}' lazy-load="true" mode="widthFix" lazy-load="true"></image>
               <text class='bannerTitle' style="background-color:{{item.titleColor}}">{{item.typeTitle}}</text>
             </view>
           </swiper-item>
@@ -36,7 +37,7 @@
       </navigator>
       <view class='music_list_ul'>
         <block wx:for="{{recommendMusicList}}" wx:key="{{*index}}">
-          <template is="musicItem" data="{{item}}"/>
+          <template is="musicItem" data="{{item}}" />
         </block>
       </view>
     </view>
@@ -48,11 +49,22 @@
       </navigator>
       <view class='music_list_ul'>
         <block wx:for="{{recommendMVList}}" wx:key="{{*index}}">
-          <template is="recommendMV" data="{{item}}"/>
+          <template is="recommendMV" data="{{item}}" />
         </block>
       </view>
     </view>
 
+    <!--独家放送-->
+    <view class='music_list'>
+      <navigator class='list_title'>独家放送
+        <view class='iconfont icon-xiangyou'></view>
+      </navigator>
+      <view class='music_list_ul'>
+        <block wx:for="{{privateContentList}}" wx:key="{{*index}}">
+          <template is="privateContent" data="{{item, index}}" />
+        </block>
+      </view>
+    </view>
 
   </view>
 

@@ -36,7 +36,8 @@ Page({
         icon: "iconfont icon-paihang"
       }],
     recommendMusicList: [],
-    recommendMVList: []
+    recommendMVList: [],
+    privateContentList:[]
   },
 
   /**
@@ -46,6 +47,7 @@ Page({
     this.getBanner();
     this.getRecommendMusicList();
     this.getRecommendMV();
+    this.getPrivateContent();
   },
   // 获取banner图片
   getBanner() {
@@ -72,15 +74,24 @@ Page({
   // 获取推荐MV
   getRecommendMV() {
     api.getRecommendMV({
-      success: (resp) => {
-        console.log(resp)
+      success: resp => {
         this.setData({
           recommendMVList: resp.data.result
         })
       }
     })
   },
-
+// 获取独家放松
+  getPrivateContent(){
+    api.getPrivateContent({
+      success: resp=>{
+        console.log(resp);
+        this.setData({
+          privateContentList: resp.data.result
+        })
+      }
+    })
+  },
   // 随机6个不重复的歌单
   randomSixItem(arr) {
     let newArr = [];
