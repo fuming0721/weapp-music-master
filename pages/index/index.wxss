@@ -4,8 +4,12 @@
 
 .container {
   padding-top: 140rpx;
+  box-sizing: border-box;
 }
-
+.indexPage{
+  bottom: 0;
+  height: 8000rpx;
+}
 .indextop {
   width: 100%;
   position: fixed;
@@ -17,7 +21,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  height: 70rpx;
+  height: 75rpx;
   background-color: #d81e06;
   position: relative;
 }
@@ -45,3 +49,59 @@
   background-color: #fff;
 }
 
+.music_list_ul{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.musicListitem{
+  width: 238rpx;
+}
+.musicListitem_imgbox{
+  width: 238rpx;
+  height: 238rpx;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+.musicListitem_img{
+  width: 100%;
+  height: 100%;
+}
+.musicListitem_name{
+  font-size: 26rpx;
+  margin: 5px 0;
+  height: 80rpx;
+  overflow: hidden;
+  padding: 0 3px;
+}
+.playCount_box{
+  position: absolute;
+  top: 0;
+  right: 5px;
+  color: #fff;
+  font-size: 24rpx;
+  text-shadow: 1px 1px 4px #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.playCount_icon{
+  font-size: 26rpx;
+  margin-right: 3px;
+}
+
+.recommendMV_item{
+  width: 360rpx;
+}
+.recommendMV_item_imgbox{
+  width: 360rpx;
+  height: 202rpx;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.recommendMV_item_img{
+  width: 100%;
+  height: 100%;
+}

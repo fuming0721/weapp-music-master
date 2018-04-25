@@ -18,9 +18,9 @@
     </view>
   </view>
 
-  <swiper current="{{activeIndex}}" bindchange="swipeChange" duration="300">
+  <swiper class='indexPage' current="{{activeIndex}}" bindchange="swipeChange" duration="300">
     <swiper-item>
-      <template is="recommend" data="{{bannerImgArr}}"/> 
+      <template is="recommend" data="{{bannerImgArr, iconNav, recommendMusicList, recommendMVList}}"/> 
     </swiper-item>
     <swiper-item>
       <template is="radiostation" />

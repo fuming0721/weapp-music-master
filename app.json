@@ -11,7 +11,7 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#d81e06",
     "navigationBarTitleText": "云音乐",
-    "navigationBarTextStyle": "rgba(255,255,255,0.8)"
+    "navigationBarTextStyle": "#fff"
   },
   "debug": true,
   "tabBar": {

@@ -1,9 +1,9 @@
 const baseUrl = "http://47.98.103.249/api/";
 
-const wxRequst = (params, url)=>{
+const wxRequst = (params, url) => {
   wx.showToast({
     title: '加载中...',
-    icon:'loading'
+    icon: 'loading'
   });
   wx.request({
     url: url,
@@ -12,11 +12,11 @@ const wxRequst = (params, url)=>{
     header: {
       'Content-Type': 'application/json'
     },
-    success:(resp)=>{
+    success: (resp) => {
       params.success && params.success(resp)
       wx.hideToast()
     },
-    fail:(resp)=>{
+    fail: (resp) => {
       params.fail && params.fail(resp)
     },
     complete: (resp) => {
@@ -26,9 +26,13 @@ const wxRequst = (params, url)=>{
 }
 
 
-const getBannerImg = (parmas) => { wxRequst(parmas,baseUrl+'banner')};
+const getBannerImg = (parmas) => { wxRequst(parmas, baseUrl + 'banner') };
+const getRecommendMusicList = (parmas) => { wxRequst(parmas, baseUrl + 'personalized') };
+const getRecommendMV = (parmas) => { wxRequst(parmas, baseUrl + 'personalized/mv') };
 
 
 module.exports = {
-  getBannerImg
+  getBannerImg,
+  getRecommendMusicList,
+  getRecommendMV
 }

@@ -2,10 +2,85 @@
 
 .bannerBox{
   width: 100%;
+  position: relative;
+  padding-top: 10px;
+}
+.bannerBGM{
+  height: 80px;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  background-color: #d81e06;
 }
 .bannerSwiper{
   width: 100%;
+  height: 283rpx;
 }
 .indexbannerimg{
   width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.bannerItembox{
+  position: relative;
+}
+.bannerTitle{
+  position: absolute;
+  color: #fff;
+  bottom: 7px;
+  right: 0px;
+  font-size: 22rpx;
+  padding: 1px 20rpx;
+  border-radius: 8px 0 8px 0;
+  opacity: 0.8;
+}
+.bannerItem{
+  padding: 0 5px;
+  box-sizing: border-box;
+}
+.quanNav{
+  color: #000;
+  height: 180rpx;
+  border-bottom: 1px solid #f2f2f2;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+.quanNavitem{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 25%;
+}
+.nav_icon{
+  border: 1px solid #d81e06;
+  width: 80rpx;
+  height: 80rpx;
+  color: #d81e06;
+  border-radius: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+.icon_font{
+  font-size: 44rpx;
+}
+.navicon-text{
+  font-size: 26rpx;
+  margin-top: 5px;
+}
+.music_list{
+  padding:10rpx;
+}
+.list_title{
+  height: 80rpx;
+  font-size: 32rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  font-weight: bold;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  line-height: 80rpx;
 }

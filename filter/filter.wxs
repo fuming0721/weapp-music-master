@@ -1,0 +1,14 @@
+// 超出1万和1亿的过滤器
+var over10000 = function (num) {
+  if (num < 10000) {
+    return num;
+  } else if (num >= 100000000) {
+    return parseInt(num / 100000000) + "亿";
+  } else {
+    return parseInt(num / 10000) + "万";
+  }
+}
+
+module.exports = {
+  over10000: over10000
+}

@@ -14,6 +14,18 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
-module.exports = {
-  formatTime: formatTime
+const over10000 = num =>{
+  if (num < 10000) {
+    return value;
+  } else if(num >= 100000000) {
+    return parseInt(value / 100000000) + "亿";
+  }else{
+    return parseInt(value / 10000) + "万";
+  }
 }
+
+module.exports = {
+  formatTime,
+  over10000
+}
+

@@ -1,0 +1,13 @@
+<wxs src="../../../../../filter/filter.wxs" module="filter" />
+<template name="musicItem">
+  <view class='musicListitem'>
+    <view class='musicListitem_imgbox'>
+      <image src='{{item.picUrl}}' class='musicListitem_img' mode="widthFix"></image>
+      <view class='playCount_box'>
+        <view class='iconfont icon-ttpod playCount_icon'></view>
+        <text class='playCount'>{{filter.over10000(item.playCount)}}</text>
+      </view>
+    </view>
+    <view class='musicListitem_name'>{{item.name}}</view>
+  </view>
+</template>
