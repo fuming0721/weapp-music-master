@@ -1,0 +1,42 @@
+<!--pages/musicList/musicList.wxml-->
+<wxs src="../../filter/filter.wxs" module="filter" />
+<import src="./template/musilistItem" />
+<view>
+  <view class='listTop'>
+    <view class='list-top' wx:if="{{flag}}">
+      <view class='list-top-img' style="background-image:url({{coverImgUrl}})"></view>
+      <view class='list-top-box'>
+        <view class='list-top-box-img'>
+          <image class='topcoverimg' src='{{coverImgUrl}}'></image>
+          <view class='playCount_box'>
+            <view class='iconfont icon-ttpod playCount_icon'></view>
+            <text class='playCount'>{{filter.over10000(playCount)}}</text>
+          </view>
+        </view>
+        <view class='list-top-creator'>
+          <view class='creator-listName'>
+            {{listName}}
+          </view>
+          <view class='creator_info'>
+            <image class='creator_usericon' src='{{usericon}}'></image>
+            <view class='creator-name'>{{creatorName}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='list-nav-box' wx:if="{{flag}}">
+    <view class='list-nav'>
+      总共{{songListArr.length}}首
+    </view>
+    <view>
+      <block wx:for="{{songListArr}}" wx:key="{{*index}}">
+        <template is="musilistItem" data="{{item, index}}"></template>
+      </block>
+    </view>
+  </view>
+
+  <view>
+
+  </view>
+</view>

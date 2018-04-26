@@ -1,0 +1,6 @@
+<!--pages/audioPage/audioPage.wxml-->
+<view class='audioPage'>
+  
+  <image class='bgImg' src='{{songinfoArr.al.picUrl}}'></image>
+  <image src='{{songinfoArr.al.picUrl}}'></image>
+</view>

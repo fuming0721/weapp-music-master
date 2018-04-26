@@ -1,6 +1,6 @@
 <wxs src="../../../../../filter/filter.wxs" module="filter" />
 <template name="musicItem">
-  <view class='musicListitem'>
+  <view class='musicListitem' bindtap='getMusicList' data-id="{{item.id}}">
     <view class='musicListitem_imgbox'>
       <image src='{{item.picUrl}}' class='musicListitem_img' mode="widthFix" lazy-load='true'></image>
       <view class='playCount_box'>

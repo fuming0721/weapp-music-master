@@ -1,0 +1,22 @@
+/* pages/audioPage/audioPage.wxss */
+.audioPage{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 90;
+}
+.bgImg{
+  position: absolute;
+  top: -10%;
+  right: 0;
+  left: -10%;
+  bottom: 0;
+  filter: blur(10px);
+  opacity: 0.8;
+  background-size: cover;
+  background-position: center center;
+  width: 120%;
+  height: 120%;
+}

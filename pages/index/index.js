@@ -37,7 +37,7 @@ Page({
       }],
     recommendMusicList: [],
     recommendMVList: [],
-    privateContentList:[]
+    privateContentList: []
   },
 
   /**
@@ -65,10 +65,10 @@ Page({
       success: (resp) => {
         this.setData({
           recommendMusicList: this.randomSixItem(resp.data.result) //随机六个
-        }) 
+        })
       }
     })
-    
+
   },
 
   // 获取推荐MV
@@ -81,16 +81,22 @@ Page({
       }
     })
   },
-// 获取独家放松
-  getPrivateContent(){
+  // 获取独家放送
+  getPrivateContent() {
     api.getPrivateContent({
-      success: resp=>{
-        console.log(resp);
+      success: resp => {
         this.setData({
           privateContentList: resp.data.result
         })
       }
     })
+  },
+  // 获取歌单id，跳转到歌单列表页，传送id
+  getMusicList(e) {
+    wx.navigateTo({
+      url: `../musicList/musicList?musicListID=${e.currentTarget.dataset.id}`,
+    })
+
   },
   // 随机6个不重复的歌单
   randomSixItem(arr) {

@@ -1,0 +1,174 @@
+/* pages/musicList/musicList.wxss */
+.listTop{
+  height: 350rpx;
+}
+.list-top {
+  width: 100%;
+  height: 350rpx;
+  position: relative;
+  overflow: hidden;
+}
+
+.list-top-img {
+  width: 120%;
+  height: 120%;
+  filter: blur(10px);
+  opacity: 0.8;
+  background-size: cover;
+  background-position: center center;
+  position: absolute;
+  left: -10%;
+  top: -10%;
+}
+
+.list-top-box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+}
+
+.list-top-box-img {
+  width: 280rpx;
+  height: 280rpx;
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.topcoverimg {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.list-top-creator {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30rpx 0;
+  box-sizing: border-box;
+  height: 280rpx;
+}
+
+.creator-listName {
+  font-size: 32rpx;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 1px 1px 5px #000;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+}
+
+.creator_info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.creator_usericon {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+
+.creator-name {
+  font-size: 28rpx;
+  color: #f2f2f2;
+  margin-left: 10px;
+  text-shadow: 1px 1px 5px #000;
+}
+
+.playCount_box{
+  position: absolute;
+  top: 0;
+  right: 5px;
+  color: #fff;
+  font-size: 22rpx;
+  text-shadow: 1px 1px 4px #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.playCount_icon{
+  font-size: 26rpx;
+  margin-right: 3px;
+}
+.list-nav{
+  height: 80rpx;
+  padding-left: 40rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+  border-radius: 8px 8px 0 0;
+  border-bottom: 1px solid #f2f2f2;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+}
+.musilistItem{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 110rpx;
+}
+.musilistItem_num{
+  width: 110rpx;
+  height: 110rpx;
+  text-align: center;
+  line-height: 110rpx;
+  flex-shrink: 0;
+  font-size: 28rpx;
+  color: #666;
+}
+.musilistItem_info{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #f2f2f2;
+  height: 100%;
+}
+.musilistItem_info_left{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  width: 530rpx;
+}
+.musilistItem_info_top{
+  font-size: 30rpx;
+  white-space:nowrap; 
+  text-overflow:ellipsis;
+  overflow:hidden;
+  width: 530rpx;
+}
+.musilistItem_info_name{
+  color: #333;
+  display: inline;
+}
+.musilistItem_info_alias{
+  color: #999;
+  display: inline;
+}
+.musilistItem_info_bottom{
+  font-size: 20rpx;
+  color: #999;
+}
+.myplayicon{
+    width: 110rpx;
+    height: 110rpx;
+    flex-shrink: 0;
+    text-align: center;
+    line-height: 110rpx;
+}

@@ -5,7 +5,9 @@
     "pages/common/topSearch/topsearch",
     "pages/search/search",
     "pages/index/template/recommend/recommend",
-    "pages/index/template/radiostation/radiostation"
+    "pages/index/template/radiostation/radiostation",
+    "pages/musicList/musicList",
+    "pages/audioPage/audioPage"
   ],
   "window": {
     "backgroundTextStyle": "light",
