@@ -9,6 +9,28 @@ var over10000 = function (num) {
   }
 }
 
+// 播放时间的格式化
+var formatmusicTime = function (value) {
+  var theTime = parseInt(value);// 秒
+  var theTime1 = 0;// 分
+  if (theTime > 59) {
+    theTime1 = parseInt(theTime / 60);
+    theTime = parseInt(theTime % 60);
+    if (theTime1 > 60) {
+      theTime1 = parseInt(theTime1 % 60);
+    }
+  }
+  var miao = "" + parseInt(theTime);
+  if (miao < 10) {
+    miao = "0" + miao;
+  }
+  var fen = "" + parseInt(theTime1);
+  if (theTime1 < 10) {
+    fen = "0" + fen;
+  }
+  return fen + ":" + miao;
+}
 module.exports = {
-  over10000: over10000
+  over10000: over10000,
+  formatmusicTime: formatmusicTime
 }

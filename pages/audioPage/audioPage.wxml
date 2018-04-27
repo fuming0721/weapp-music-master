@@ -1,6 +1,32 @@
-<!--pages/audioPage/audioPage.wxml-->
-<view class='audioPage'>
-  
-  <image class='bgImg' src='{{songinfoArr.al.picUrl}}'></image>
-  <image src='{{songinfoArr.al.picUrl}}'></image>
+<!-- pages/audioPage/audioPage.wxml  playing -->
+<wxs src="../../filter/filter.wxs" module="filter" />
+<view class="audioPage {{isplaying?'playing':''}}" style='height:{{innerHeight}}px' >
+  <view class='bgImg'>
+    <image class='bgImg_img' src='{{songinfoArr.al.picUrl}}' mode='top'></image>
+    <view class='bgcolor'></view>
+  </view>
+  <view class='player'>
+    <image class='player_img' src='../../../images/aag.png'></image>
+  </view>
+  <view class='coverImgbox'>
+    <image class='coverbgImg' src='../../../images/heijiao.png'></image>
+    <image class='songcoverImg' src='{{songinfoArr.al.picUrl}}'></image>
+  </view>
+
+  <view class='buttons'>
+    <view class='iconfont icon-xihuan'></view>
+    <view class='iconfont icon-xiazai'></view>
+    <view class='iconfont icon-pinglun1'></view>
+    <view class='iconfont icon-gengduoxiao'></view>
+  </view>
+
+  <view class='songSliderbox'>
+    <text>{{filter.formatmusicTime(playtime)}}</text>
+    <slider class='songSlider' max="{{durationTime}}" value="{{playtime}}" bindchange="sliderChange" block-size="16" activeColor="#d81e06"></slider>
+    <text>{{filter.formatmusicTime(durationTime)}}</text>
+  </view>
+  <view class='changeSong'>
+
+  </view>
+
 </view>

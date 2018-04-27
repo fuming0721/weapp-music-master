@@ -1,22 +1,119 @@
 /* pages/audioPage/audioPage.wxss */
-.audioPage{
+
+.audioPage {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.bgImg {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: -10%;
+  top: -10%;
+  filter: blur(15px) brightness(.8);
+  opacity: 0.8;
+  width: 120%;
+  height: 120%;
+}
+.bgcolor{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
   position: absolute;
   top: 0;
   right: 0;
   left: 0;
   bottom: 0;
-  z-index: 90;
+  z-index: 99;
 }
-.bgImg{
+.bgImg_img {
+  height: 100%;
+  width: 100%;
+}
+
+.player {
+  width: 100%;
+  height: 345rpx;
+  z-index: 10;
+  text-align: center;
+  position:absolute;
+}
+
+.player_img {
+  width: 230rpx;
+  height: 345rpx;
+  margin: -43rpx 0 0 156rpx;
+  transform-origin: 40rpx 40rpx;
+  transform: rotate(-20deg);
+  transition: all linear 0.5s;
+}
+
+
+.coverImgbox{
   position: absolute;
-  top: -10%;
-  right: 0;
-  left: -10%;
-  bottom: 0;
-  filter: blur(10px);
-  opacity: 0.8;
-  background-size: cover;
-  background-position: center center;
-  width: 120%;
-  height: 120%;
+  top: 150rpx;
+  height: 610rpx;
+  width: 750rpx;
+  text-align: center;
+}
+.coverbgImg{
+  width: 610rpx;
+  height: 610rpx;
+}
+.songcoverImg{
+  width: 390rpx;
+  height: 390rpx;
+  border-radius: 50%;
+  position: absolute;
+  top: 110rpx;
+  left: 180rpx;
+}
+
+.playing .player_img{
+  transform: rotate(0);
+}
+ .playing .coverImgbox{
+  animation: playing 20s infinite linear;
+} 
+
+@keyframes playing {
+  0% {transform: rotate(0)}
+  100% {transform: rotate(360deg)}
+}
+.buttons{
+  position: absolute;
+  bottom: 260rpx;
+  width: 100%;
+  height: 120rpx;
+  display: flex;
+  padding: 0px 20rpx;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+}
+.buttons view{
+  font-size: 48rpx;
+  width: 25%;
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+   color: #fff; 
+}
+
+.songSliderbox{
+  position: absolute;
+  bottom: 170rpx;
+   color: #f2f2f2; 
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20rpx;
+  align-items: center;
+}
+.songSlider{
+  flex: 1;
 }

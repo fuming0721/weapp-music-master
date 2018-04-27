@@ -34,6 +34,11 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    musicId:0,
+    musicduration:0,
+    musicPlaytime: 0,
+    musicCoverImg:"",
+    isplaying: false
   }
 })
