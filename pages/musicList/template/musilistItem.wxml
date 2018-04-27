@@ -1,5 +1,5 @@
 <template name="musilistItem">
-  <view class='musilistItem' bindtap='playMusic' data-songid="{{item.id}}" data-duration="{{item.duration}}">
+  <view class='musilistItem' bindtap='playMusic' data-musicdata="{{item}}">
     <view class='musilistItem_num'>{{index+1}}</view>
     <view class='musilistItem_info'>
       <view class='musilistItem_info_left'>

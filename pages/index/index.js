@@ -96,7 +96,6 @@ Page({
     wx.navigateTo({
       url: `../musicList/musicList?musicListID=${e.currentTarget.dataset.id}`,
     })
-
   },
   // 随机6个不重复的歌单
   randomSixItem(arr) {

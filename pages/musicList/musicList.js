@@ -1,5 +1,6 @@
 // pages/musicList/musicList.js
 import api from '../../api/api.js'
+const app = getApp();
 Page({
 
   /**
@@ -22,8 +23,9 @@ Page({
     this.loadMusicList(options.musicListID)
   },
   playMusic(e) {
+    app.globalData.musicData = e.currentTarget.dataset.musicdata;
     wx.navigateTo({
-      url: `../audioPage/audioPage?songid=${e.currentTarget.dataset.songid}&duration=${e.currentTarget.dataset.duration}`
+      url: `../audioPage/audioPage?songid=${e.currentTarget.dataset.musicdata.id}`
     })
   },
   // 根据接收到的歌单id，请求数据

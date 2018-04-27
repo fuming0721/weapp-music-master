@@ -2,7 +2,7 @@
 <wxs src="../../filter/filter.wxs" module="filter" />
 <view class="audioPage {{isplaying?'playing':''}}" style='height:{{innerHeight}}px' >
   <view class='bgImg'>
-    <image class='bgImg_img' src='{{songinfoArr.al.picUrl}}' mode='top'></image>
+    <image class='bgImg_img' src='{{musicData.album.picUrl}}' mode='top'></image>
     <view class='bgcolor'></view>
   </view>
   <view class='player'>
@@ -10,7 +10,7 @@
   </view>
   <view class='coverImgbox'>
     <image class='coverbgImg' src='../../../images/heijiao.png'></image>
-    <image class='songcoverImg' src='{{songinfoArr.al.picUrl}}'></image>
+    <image class='songcoverImg' src='{{musicData.album.picUrl}}'></image>
   </view>
 
   <view class='buttons'>
@@ -22,11 +22,13 @@
 
   <view class='songSliderbox'>
     <text>{{filter.formatmusicTime(playtime)}}</text>
-    <slider class='songSlider' max="{{durationTime}}" value="{{playtime}}" bindchange="sliderChange" block-size="16" activeColor="#d81e06"></slider>
-    <text>{{filter.formatmusicTime(durationTime)}}</text>
+    <slider class='songSlider' max="{{musicData.duration/1000}}" value="{{playtime}}" bindchange="sliderChange" block-size="16" activeColor="#d81e06"></slider>
+    <text>{{filter.formatmusicTime(musicData.duration/1000)}}</text>
   </view>
   <view class='changeSong'>
-
+    <view class='iconfont icon-48shangyishou changebtn'></view>
+    <view class='iconfont icon-bofang playbtn'></view>
+    <view class='iconfont icon-49xiayishou changebtn'></view>
   </view>
 
 </view>

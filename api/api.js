@@ -35,8 +35,6 @@ const getRecommendMV = (parmas) => { wxRequst(parmas, baseUrl + 'personalized/mv
 const getPrivateContent = (parmas) => { wxRequst(parmas, baseUrl + 'personalized/privatecontent')};
 // 获取歌单列表
 const getMusicList = (parmas) => { wxRequst(parmas, baseUrl + '/playlist/detail') };
-// 获取歌曲信息
-const getsongInfo = (parmas) => { wxRequst(parmas, baseUrl + '/song/detail') };
 
 
 module.exports = {
@@ -44,6 +42,5 @@ module.exports = {
   getRecommendMusicList,
   getRecommendMV,
   getPrivateContent,
-  getMusicList,
-  getsongInfo
+  getMusicList
 }
