@@ -1,10 +1,10 @@
 <template name="musilistItem">
-  <view class="musilistItem {{item.id == cerrentMusic?'cerrentMusic':''}}" bindtap='playMusic' data-musicdata="{{item}}">
+  <view class="musilistItem {{index == cerrentMusic?'cerrentMusic':''}}" bindtap='playMusic' data-musicdata="{{item}}" data-musicindex='{{index}}'>
     <view class='musilistItem_num'>{{index+1}}</view>
     <view class='musilistItem_info'>
       <view class='musilistItem_info_left'>
         <view class='musilistItem_info_top'>
-           <view class='musilistItem_info_name'>{{item.name}}</view> 
+            <view class='musilistItem_info_name'>{{item.name}}</view>  
           <view class='musilistItem_info_alias' wx:if="{{item.alias.length}}">({{item.alias[0]}})</view>
         </view>
         <view class='musilistItem_info_bottom'>{{item.artists[0].name}}-{{item.album.name}}</view>

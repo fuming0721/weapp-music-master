@@ -11,7 +11,9 @@ Page({
     musicData: {},
     innerHeight: "",
     playtime: 0,
-    isplaying: false
+    isplaying: false,
+    musicListArr:[],
+    musicIndex: 0
   },
 
   /**
@@ -19,9 +21,10 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      musicData: app.globalData.musicData
+      musicListArr: app.globalData.musicListArr,
+      musicIndex: options.musicindex,
+      musicData: app.globalData.musicListArr[options.musicindex]
     })
-
     // 设置页面高度
     wx.getSystemInfo({
       success: res => {
@@ -31,10 +34,7 @@ Page({
       },
     })
 
-    // 设置navbarTitle
-    wx.setNavigationBarTitle({
-      title: this.data.musicData.name
-    })
+    
 
     // 开始播放
     this.palyMusic();
@@ -53,6 +53,10 @@ Page({
         isplaying: !player.paused
       })
     })
+    // 设置navbarTitle
+    wx.setNavigationBarTitle({
+      title: this.data.musicData.name
+    })
   },
 
   // slider 的滑动
@@ -62,6 +66,22 @@ Page({
   // 音乐暂停
   pauseMusic() {
     player.pause()
+  },
+  nextMusic(){
+    app.globalData.musicIndex = parseInt(this.data.musicIndex) + 1
+    this.setData({
+      musicData: this.data.musicListArr[parseInt(this.data.musicIndex) + 1],
+      musicIndex: parseInt(this.data.musicIndex) + 1
+    })
+    this.palyMusic()
+  },
+  prevMusic(){
+    app.globalData.musicIndex = parseInt(this.data.musicIndex) - 1
+    this.setData({
+      musicData: this.data.musicListArr[parseInt(this.data.musicIndex) - 1],
+      musicIndex: parseInt(this.data.musicIndex) - 1
+    })
+    this.palyMusic()
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -74,7 +94,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    
   },
 
   /**

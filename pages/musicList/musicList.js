@@ -14,7 +14,7 @@ Page({
     creatorName: "",       //歌单创建者名字
     usericon: "",           //创建者头像
     flag: false,
-    cerrentMusic:0
+    cerrentMusic: -1
   },
 
   /**
@@ -49,11 +49,13 @@ Page({
   // 开始播放音乐
   playMusic(e) {
     app.globalData.musicData = e.currentTarget.dataset.musicdata;
+    // 得到播放音乐的 index
+    app.globalData.musicIndex = e.currentTarget.dataset.musicindex;
     this.setData({
-      cerrentMusic: app.globalData.musicData.id
+      cerrentMusic: app.globalData.musicIndex
     })
     wx.navigateTo({
-      url: "../audioPage/audioPage"
+      url: "../audioPage/audioPage?musicindex=" + parseInt(e.currentTarget.dataset.musicindex)
     });
 
   },
@@ -67,13 +69,10 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow () {
+  onShow() {
     this.setData({
-      cerrentMusic: app.globalData.musicData.id || 0
+      cerrentMusic: app.globalData.musicIndex
     })
-    // this.setData({
-    //   cerrentMusic:app.globalData.musicData.id
-    // })
   },
 
   /**
@@ -87,7 +86,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    app.globalData.musicIndex = -1
   },
 
   /**
