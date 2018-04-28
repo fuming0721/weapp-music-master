@@ -1,6 +1,6 @@
 <!-- pages/audioPage/audioPage.wxml  playing -->
 <wxs src="../../filter/filter.wxs" module="filter" />
-<view class="audioPage {{isplaying?'playing':''}}" style='height:{{innerHeight}}px' >
+<view class="audioPage {{isplaying?'playing':''}}" style='height:{{innerHeight}}px'>
   <view class='bgImg'>
     <image class='bgImg_img' src='{{musicData.album.picUrl}}' mode='top'></image>
     <view class='bgcolor'></view>
@@ -8,7 +8,7 @@
   <view class='player'>
     <image class='player_img' src='../../../images/aag.png'></image>
   </view>
-  <view class='coverImgbox'>
+  <view class="coverImgbox {{isplaying?'musicisplay':'musicispaused'}}">
     <image class='coverbgImg' src='../../../images/heijiao.png'></image>
     <image class='songcoverImg' src='{{musicData.album.picUrl}}'></image>
   </view>
@@ -20,14 +20,16 @@
     <view class='iconfont icon-gengduoxiao'></view>
   </view>
 
-  <view class='songSliderbox'>
+   <view class='songSliderbox'>
     <text>{{filter.formatmusicTime(playtime)}}</text>
-    <slider class='songSlider' max="{{musicData.duration/1000}}" value="{{playtime}}" bindchange="sliderChange" block-size="16" activeColor="#d81e06"></slider>
+    <slider class='songSlider' min='0' max="{{musicData.duration/1000}}" value="{{playtime}}" bindchange="sliderChange" block-size="16" activeColor="#d81e06"></slider>
     <text>{{filter.formatmusicTime(musicData.duration/1000)}}</text>
-  </view>
+  </view> 
+  
   <view class='changeSong'>
     <view class='iconfont icon-48shangyishou changebtn'></view>
-    <view class='iconfont icon-bofang playbtn'></view>
+    <view class='iconfont icon-zanting pausebtn' wx:if="{{isplaying}}" bindtap="pauseMusic"></view>
+    <view class='iconfont icon-bofang playbtn' wx:else bindtap="palyMusic"></view>
     <view class='iconfont icon-49xiayishou changebtn'></view>
   </view>
 

@@ -78,10 +78,15 @@
   transform: rotate(0);
 }
 
-.playing .coverImgbox {
+.coverImgbox {
   animation: playing 20s infinite linear;
 }
-
+.musicisplay{
+  animation-play-state: running;
+}
+.musicispaused{
+  animation-play-state: paused;
+}
 @keyframes playing {
   0% {
     transform: rotate(0);
@@ -147,7 +152,7 @@
   color: #fff;
 }
 
-.playbtn {
+.playbtn, .pausebtn {
   font-size: 90rpx;
 }
 

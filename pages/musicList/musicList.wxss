@@ -141,8 +141,10 @@
 .musilistItem_info_left{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: flex-start;
+  padding: 10rpx;
+  box-sizing: border-box;
   height: 100%;
   width: 530rpx;
 }
@@ -171,4 +173,7 @@
     flex-shrink: 0;
     text-align: center;
     line-height: 110rpx;
+}
+.cerrentMusic view{
+  color: #d81e06;
 }

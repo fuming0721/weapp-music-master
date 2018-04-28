@@ -31,7 +31,7 @@
     </view>
     <view>
       <block wx:for="{{songListArr}}" wx:key="{{*index}}">
-        <template is="musilistItem" data="{{item, index}}"></template>
+        <template is="musilistItem" data="{{item, index, cerrentMusic}}"></template>
       </block>
     </view>
   </view>

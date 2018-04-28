@@ -14,6 +14,7 @@ Page({
     creatorName: "",       //歌单创建者名字
     usericon: "",           //创建者头像
     flag: false,
+    cerrentMusic:0
   },
 
   /**
@@ -22,12 +23,7 @@ Page({
   onLoad: function (options) {
     this.loadMusicList(options.musicListID)
   },
-  playMusic(e) {
-    app.globalData.musicData = e.currentTarget.dataset.musicdata;
-    wx.navigateTo({
-      url: `../audioPage/audioPage?songid=${e.currentTarget.dataset.musicdata.id}`
-    })
-  },
+
   // 根据接收到的歌单id，请求数据
   loadMusicList(id) {
     api.getMusicList({
@@ -35,6 +31,7 @@ Page({
         id: id
       },
       success: resp => {
+        console.log(resp)
         this.setData({
           songListArr: resp.data.result.tracks,
           playCount: resp.data.result.playCount,
@@ -43,23 +40,40 @@ Page({
           creatorName: resp.data.result.creator.nickname,
           usericon: resp.data.result.creator.avatarUrl,
           flag: true
-        })
+        });
+        app.globalData.musicListArr = resp.data.result.tracks;
       }
     })
   },
 
+  // 开始播放音乐
+  playMusic(e) {
+    app.globalData.musicData = e.currentTarget.dataset.musicdata;
+    this.setData({
+      cerrentMusic: app.globalData.musicData.id
+    })
+    wx.navigateTo({
+      url: "../audioPage/audioPage"
+    });
+
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-   
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
+  onShow () {
+    this.setData({
+      cerrentMusic: app.globalData.musicData.id || 0
+    })
+    // this.setData({
+    //   cerrentMusic:app.globalData.musicData.id
+    // })
   },
 
   /**
