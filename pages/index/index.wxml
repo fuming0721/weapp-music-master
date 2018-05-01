@@ -7,7 +7,7 @@
 <!--主播电台-->
 <view class="container">
   <view class='indextop'>
-    <template is="topsearch" />
+    <template is="topsearch" data="{{isPlaying}}"/>
     <view class="indexNav">
       <block wx:for="{{tabs}}" wx:key="*this">
         <view id="{{index}}" class="indexnavItem" bindtap="tabClick"> {{item}}</view>

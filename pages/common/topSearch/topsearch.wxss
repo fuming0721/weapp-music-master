@@ -20,13 +20,13 @@
   align-items: center
 }
 .playicon{
-  height: 100%;
   width: 70rpx;
   color: #fff;
   font-size: 40rpx;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
+  margin-bottom: 8rpx;
 }
 .sousuo{
   font-size: 25rpx;

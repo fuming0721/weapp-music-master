@@ -2,7 +2,6 @@
   "pages": [
     "pages/index/index",
     "pages/video/video",
-    "pages/common/topSearch/topsearch",
     "pages/search/search",
     "pages/index/template/recommend/recommend",
     "pages/index/template/radiostation/radiostation",
@@ -15,7 +14,7 @@
     "navigationBarTitleText": "云音乐",
     "navigationBarTextStyle": "#fff"
   },
-  "debug": true,
+  "debug": false,
   "tabBar": {
     "color": "#666",
     "selectedColor": "#d81e06",
@@ -41,13 +40,13 @@
         "text": "我的"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/video/video",
         "iconPath": "images/friend.png",
         "selectedIconPath": "images/friend_active.png",
         "text": "朋友"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/video/video",
         "iconPath": "images/account.png",
         "selectedIconPath": "images/account_active.png",
         "text": "账号"

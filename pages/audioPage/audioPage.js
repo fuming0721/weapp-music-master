@@ -8,11 +8,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    musicData: {},
+    // musicData: {},
     innerHeight: "",
     playtime: 0,
     isplaying: false,
-    musicListArr:[],
+    musicListArr: [],
     musicIndex: 0
   },
 
@@ -23,7 +23,7 @@ Page({
     this.setData({
       musicListArr: app.globalData.musicListArr,
       musicIndex: options.musicindex,
-      musicData: app.globalData.musicListArr[options.musicindex]
+      // musicData: app.globalData.musicListArr[options.musicindex]
     })
     // 设置页面高度
     wx.getSystemInfo({
@@ -34,7 +34,7 @@ Page({
       },
     })
 
-    
+
 
     // 开始播放
     this.palyMusic();
@@ -42,20 +42,22 @@ Page({
   },
   // 开始播放
   palyMusic() {
-    player.src = `https://music.163.com/song/media/outer/url?id=${this.data.musicData.id}.mp3`;
-    player.title = this.data.musicData.name;
-    player.coverImgUrl = this.data.musicData.album.picUrl;
-    player.duration = this.data.musicData.duration;
+    let cerrentMusic = this.data.musicListArr[this.data.musicIndex];
+    player.src = `https://music.163.com/song/media/outer/url?id=${cerrentMusic.id}.mp3`;
+    player.title = cerrentMusic.name;
+    player.coverImgUrl = cerrentMusic.album.picUrl;
+    player.duration = cerrentMusic.duration;
     // 监听播放器的时间变化
     player.onTimeUpdate(() => {
+      app.globalData.isplaying = !player.paused
       this.setData({
-        playtime: player.currentTime,
-        isplaying: !player.paused
+        isplaying: !player.paused,
+        playtime: player.currentTime
       })
     })
     // 设置navbarTitle
     wx.setNavigationBarTitle({
-      title: this.data.musicData.name
+      title: cerrentMusic.name
     })
   },
 
@@ -67,20 +69,34 @@ Page({
   pauseMusic() {
     player.pause()
   },
-  nextMusic(){
+  // 下一首
+  nextMusic() {
     app.globalData.musicIndex = parseInt(this.data.musicIndex) + 1
     this.setData({
-      musicData: this.data.musicListArr[parseInt(this.data.musicIndex) + 1],
       musicIndex: parseInt(this.data.musicIndex) + 1
     })
+
+    if (parseInt(this.data.musicIndex) > this.data.musicListArr.length-1) {
+      app.globalData.musicIndex = 0;
+      this.setData({
+        musicIndex: 0
+      })
+    }
     this.palyMusic()
   },
-  prevMusic(){
-    app.globalData.musicIndex = parseInt(this.data.musicIndex) - 1
+  // 上一首
+  prevMusic() {
+    app.globalData.musicIndex = parseInt(this.data.musicIndex) - 1;
     this.setData({
-      musicData: this.data.musicListArr[parseInt(this.data.musicIndex) - 1],
       musicIndex: parseInt(this.data.musicIndex) - 1
     })
+    // 如果已经是第一首，就跳到列表的最后一首
+    if (parseInt(this.data.musicIndex) < 0) {
+      app.globalData.musicIndex = this.data.musicListArr.length - 1;
+      this.setData({
+        musicIndex: this.data.musicListArr.length - 1
+      })
+    }
     this.palyMusic()
   },
   /**
@@ -94,7 +110,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    
+
   },
 
   /**

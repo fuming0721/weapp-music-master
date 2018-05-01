@@ -3,8 +3,13 @@
   <view class='topSearch'>
     <navigator class='topsearchLeft' url='../search/search'>
       <view class='iconfont icon-sousuo sousuo'></view>
-      <text>很好听哦！</text>
+      <text>很好听哦!</text>
     </navigator>
-    <view class='iconfont icon-playing playicon'></view>
+    <view class='cntloading playicon {{isPlaying?"playingNow":""}}'>
+      <text class='loadingGif cl2'></text>
+      <text class='loadingGif cl3'></text>
+      <text class='loadingGif cl2'></text>
+      <text class='loadingGif cl3'></text>
+    </view>
   </view>
 </template>

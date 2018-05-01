@@ -31,7 +31,6 @@ Page({
         id: id
       },
       success: resp => {
-        console.log(resp)
         this.setData({
           songListArr: resp.data.result.tracks,
           playCount: resp.data.result.playCount,
@@ -107,6 +106,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    
   }
+  
 })
