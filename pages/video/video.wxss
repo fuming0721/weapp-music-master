@@ -1,3 +1,42 @@
 /**index.wxss**/
+.videoBox{
+  padding:  10rpx 0;
+}
 
-
+.recommendMV_item{
+  width: 100%;
+}
+.recommendMV_item_imgbox{
+  width: 100%;
+   height: 400rpx; 
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.recommendMV_item_img{
+  width: 100%;
+  height: 100%;
+}
+.musicListitem_name{
+  font-size: 26rpx;
+  margin: 5px 0;
+  line-height: 40rpx;
+  overflow: hidden;
+  max-height: 80rpx;
+  padding: 0 3px;
+}
+.playCount_box{
+  position: absolute;
+  top: 4rpx;
+  right: 10rpx;
+  color: #fff;
+  font-size: 22rpx;
+  text-shadow: 1px 1px 4px #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.playCount_icon{
+  font-size: 28rpx;
+  margin-right: 3px;
+}

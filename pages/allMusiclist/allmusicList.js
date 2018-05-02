@@ -29,7 +29,6 @@ Page({
     })
   },
   godetail(options){
-    console.log(options.currentTarget.dataset.id)
     wx.navigateTo({
       url: '../../../../musicList/musicList?musicListID=' + options.currentTarget.dataset.id
     })

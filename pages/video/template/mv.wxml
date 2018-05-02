@@ -1,8 +1,0 @@
-<!--pages/index/template/radiostation/radiostation.wxml-->
-<!-- <import src="./mvItem" />
-<template name="mv">
-  <view>推荐MV</view>
-  <block wx:for="{{recommendMVList}}" wx:key="{{*index}}">
-    <template is="mvItem" />
-  </block>
-</template> -->

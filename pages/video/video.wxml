@@ -1,5 +1,25 @@
 <!--index.wxml-->
-<view class="container">
-  
-  视频
+<wxs src="../../filter/filter.wxs" module="filter" />
+<view class="videoBox">
+  <block wx:for="{{recommendMVList}}" wx:key="{{*index}}">
+    <view class='recommendMV_item'>
+      <view class='recommendMV_item_imgbox'>
+        <image src='{{item.cover}}' class='recommendMV_item_img' mode="widthFix" lazy-load='true'></image>
+
+        <view class='playCount_box'>
+          <view class='iconfont icon-shipin4 playCount_icon'></view>
+          <text class='playCount'>{{filter.over10000(item.playCount)}}</text>
+        </view>
+
+      </view>
+
+      <view class='musicListitem_name'>
+        <text>{{item.name}}</text>
+        <view>
+          <view>点赞96</view>
+          <view>点赞98</view>
+        </view>
+      </view>
+    </view>
+  </block>
 </view>
