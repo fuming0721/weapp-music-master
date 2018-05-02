@@ -10,9 +10,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    tabs: ["个性推荐", "主播电台"],
-    activeIndex: 0,
-    sliderOffset: 0,
     bannerImgArr: [],
     iconNav: [
       {
@@ -26,8 +23,8 @@ Page({
         icon: "iconfont icon-rili"
       },
       {
-        name: "歌单",
-        url: "",
+        name: "精品歌单",
+        url: "../../../../allMusiclist/allmusicList",
         icon: "iconfont icon-gedan"
       },
       {
@@ -36,8 +33,6 @@ Page({
         icon: "iconfont icon-paihang"
       }],
     recommendMusicList: [],
-    recommendMVList: [],
-    privateContentList: [],
     isPlaying: false
   },
 
@@ -47,8 +42,6 @@ Page({
   onLoad(e) {
     this.getBanner();
     this.getRecommendMusicList();
-    this.getRecommendMV();
-    this.getPrivateContent();
   },
   // 获取banner图片
   getBanner() {
@@ -65,29 +58,7 @@ Page({
     api.getRecommendMusicList({
       success: (resp) => {
         this.setData({
-          recommendMusicList: this.randomSixItem(resp.data.result) //随机六个
-        })
-      }
-    })
-
-  },
-
-  // 获取推荐MV
-  getRecommendMV() {
-    api.getRecommendMV({
-      success: resp => {
-        this.setData({
-          recommendMVList: resp.data.result
-        })
-      }
-    })
-  },
-  // 获取独家放送
-  getPrivateContent() {
-    api.getPrivateContent({
-      success: resp => {
-        this.setData({
-          privateContentList: resp.data.result
+          recommendMusicList: resp.data.result
         })
       }
     })
@@ -98,32 +69,8 @@ Page({
       url: `../musicList/musicList?musicListID=${e.currentTarget.dataset.id}`,
     })
   },
-  // 随机6个不重复的歌单
-  randomSixItem(arr) {
-    let newArr = [];
-    for (var i = 0; i < arr.length; i++) {
-      var r = Math.floor(Math.random() * (arr.length));
-      if (!newArr.includes(arr[r]) && newArr.length < 6) {
-        newArr.push(arr[r])
-      }
-    }
-    return newArr;
-  },
-  tabClick(e) {
-    this.setData({
-      sliderOffset: e.currentTarget.id * 375,
-      activeIndex: e.currentTarget.id
-    });
-  },
-  swipeChange(e) {
-    this.setData({
-      sliderOffset: e.detail.current * 375,
-      activeIndex: e.detail.current
-    });
-  },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
+ 
+ 
   onReady: function () {
 
   },
@@ -131,7 +78,7 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow () {
+  onShow() {
     this.setData({
       isPlaying: app.globalData.isplaying
     })

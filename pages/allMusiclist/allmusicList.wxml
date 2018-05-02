@@ -1,0 +1,7 @@
+<!--pages/allMusiclist/allmusicList.wxml-->
+<import src="./template/boutiqueItem" />
+<view class='BoutiqueList'>
+  <block wx:for="{{musicList}}" wx:key="{{*index}}">
+       <template is="ListItem" data="{{item}}" /> 
+  </block>
+</view>

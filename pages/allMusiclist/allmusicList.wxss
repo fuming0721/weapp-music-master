@@ -1,0 +1,76 @@
+/* pages/allMusiclist/allmusicList.wxss */
+.musicItem{
+  height: 260rpx;
+  width: 100%;
+  border-bottom: 1px solid #f2f2f2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.musicItem_left{
+  width: 260rpx;
+  height: 260rpx;
+  padding: 10rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+.musicItemImg{
+  width: 240rpx;
+  height: 240rpx;
+  display: block;
+  border-radius: 8rpx;
+  flex-shrink: 0;
+}
+.musicItem_right{
+  height: 260rpx;
+  padding: 40rpx 10rpx;
+  box-sizing: border-box;
+  width: 490rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.musicItem_name{
+  font-size: 28rpx;
+  font-weight: bold;
+}
+.musicItem_nickname{
+  font-size: 24rpx;
+  color: #666;
+}
+.musicItem_tag{
+  line-height: 32rpx;
+}
+.musicItem_tag_b{
+  font-size: 20rpx;
+  color: #d81e06;
+  display: inline-block;
+  height: 26rpx;
+  line-height: 22rpx;
+  padding: 0 4rpx;
+  box-sizing: border-box;
+  margin-right: 10rpx;
+  border: 2rpx solid #d81e06;
+  position: relative;
+  bottom: 2rpx;
+}
+.musicItem_copywriter{
+  color: #666;
+  font-size: 24rpx;
+  margin-top: 2rpx;
+}
+.playCount_box{
+  position: absolute;
+  top: 16rpx;
+  right: 16rpx;
+  color: #fff;
+  font-size: 20rpx;
+  text-shadow: 1px 1px 4px #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.playCount_icon{
+  font-size: 20rpx;
+  margin-right: 3px;
+}

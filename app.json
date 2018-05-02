@@ -3,10 +3,9 @@
     "pages/index/index",
     "pages/video/video",
     "pages/search/search",
-    "pages/index/template/recommend/recommend",
-    "pages/index/template/radiostation/radiostation",
     "pages/musicList/musicList",
-    "pages/audioPage/audioPage"
+    "pages/audioPage/audioPage",
+    "pages/allMusiclist/allmusicList"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,4 +1,4 @@
-<wxs src="../../../../../filter/filter.wxs" module="filter" />
+<wxs src="../../../filter/filter.wxs" module="filter" />
 <template name="musicItem">
   <view class='musicListitem' bindtap='getMusicList' data-id="{{item.id}}">
     <view class='musicListitem_imgbox'>

@@ -1,29 +1,52 @@
 <!--index.wxml-->
-<import src='../common/topSearch/topsearch.wxml' />
+
 <!--顶部搜索-->
-<import src='./template/recommend/recommend.wxml' />
+<import src='../common/topSearch/topsearch.wxml' />
+
 <!--个性推荐-->
-<import src='./template/radiostation/radiostation.wxml' />
-<!--主播电台-->
+<import src='./template/musicitem.wxml' />
 <view class="container">
   <view class='indextop'>
     <template is="topsearch" data="{{isPlaying}}"/>
-    <view class="indexNav">
-      <block wx:for="{{tabs}}" wx:key="*this">
-        <view id="{{index}}" class="indexnavItem" bindtap="tabClick"> {{item}}</view>
+  </view>
+
+  <view class='recommend'>
+    <view class='bannerBox'>
+      <view class='bannerBGM'></view>
+      <swiper indicator-dots="true" indicator-active-color="#fff" autoplay="true" circular="true" class='bannerSwiper'>
+        <block wx:for="{{bannerImgArr}}" wx:key="{{*index}}">
+          <swiper-item class='bannerItem'>
+            <view class='bannerItembox'>
+              <image class='indexbannerimg' src='{{item.pic}}' lazy-load="true" mode="widthFix" lazy-load="true"></image>
+              <text class='bannerTitle' style="background-color:{{item.titleColor}}">{{item.typeTitle}}</text>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+
+    <!-- 圈圈nav导航 -->
+    <view class='quanNav'>
+      <block wx:for="{{iconNav}}" wx:key="{{*index}}">
+        <navigator url='{{item.url}}' class='quanNavitem'>
+          <view class='nav_icon'>
+            <view class='{{item.icon}} icon_font'></view>
+          </view>
+          <text class='navicon-text'>{{item.name}}</text>
+        </navigator>
       </block>
-      <view class='indexnavline_box' style="left: {{sliderOffset}}rpx;">
-        <view class="indexnavline"></view>
+    </view>
+
+    <!--推荐歌单-->
+    <view class='music_list'>
+      <navigator class='list_title' url='../../../../allMusiclist/allmusicList'>推荐歌单
+        <view class='iconfont icon-xiangyou'></view>
+      </navigator>
+      <view class='music_list_ul'>
+        <block wx:for="{{recommendMusicList}}" wx:key="{{*index}}">
+          <template is="musicItem" data="{{item}}" />
+        </block>
       </view>
     </view>
   </view>
-
-  <swiper class='indexPage' current="{{activeIndex}}" bindchange="swipeChange" duration="300">
-    <swiper-item>
-      <template is="recommend" data="{{bannerImgArr, iconNav, recommendMusicList, recommendMVList, privateContentList}}"/> 
-    </swiper-item>
-    <swiper-item>
-      <template is="radiostation" />
-    </swiper-item>
-  </swiper>
 </view>

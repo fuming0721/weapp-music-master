@@ -1,5 +1,5 @@
-<wxs src="../../../../../filter/filter.wxs" module="filter" />
-<template name="recommendMV">
+<!-- <wxs src="../../../../filter/filter.wxs" module="filter" />
+<template name="mvItem">
   <view class='recommendMV_item'>
     <view class='recommendMV_item_imgbox'>
       <image src='{{item.picUrl}}' class='recommendMV_item_img' mode="widthFix" lazy-load='true'></image>
@@ -10,4 +10,4 @@
     </view>
     <view class='musicListitem_name'>{{item.name}}</view>
   </view>
-</template>
+</template> -->

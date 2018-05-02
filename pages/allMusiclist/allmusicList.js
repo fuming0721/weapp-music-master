@@ -1,20 +1,39 @@
-// pages/index/template/radiostation/radiostation.js
+// pages/allMusiclist/allmusicList.js
+import api from '../../api/api.js'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    musicList:[],
+    limit: 10
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.getBoutiqueList()
   },
-
+  getBoutiqueList(){
+    api.getBoutiqueList({
+      data:{
+        limit:this.data.limit
+      },
+      success:resp=>{
+        this.setData({
+          musicList: resp.data.playlists
+        })
+      }
+    })
+  },
+  godetail(options){
+    console.log(options.currentTarget.dataset.id)
+    wx.navigateTo({
+      url: '../../../../musicList/musicList?musicListID=' + options.currentTarget.dataset.id
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -54,7 +73,10 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+    this.setData({
+      limit: this.data.limit + 10
+    })
+    this.getBoutiqueList()
   },
 
   /**

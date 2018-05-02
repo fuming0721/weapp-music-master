@@ -1,0 +1,20 @@
+<wxs src="../../../filter/filter.wxs" module="filter" />
+<template name="ListItem">
+  <view class='musicItem' bindtap='godetail' data-id='{{item.id}}'>
+    <view class='musicItem_left'>
+      <image class='musicItemImg' src='{{item.coverImgUrl}}' alt='' lazy-load="true" mode="scaleToFill"></image>
+      <view class='playCount_box'>
+        <view class='iconfont icon-ttpod playCount_icon'></view>
+        <text class='playCount'>{{filter.over10000(item.playCount)}}</text>
+      </view>
+    </view>
+    <view class='musicItem_right'>
+      <text class='musicItem_name'>{{item.name}}</text>
+      <text class='musicItem_nickname'>by {{item.creator.nickname}}</text>
+      <view class='musicItem_tag'>
+        <text class='musicItem_tag_b'>{{item.tags[0]}}</text>
+        <text class='musicItem_copywriter'>{{item.copywriter}}</text>
+      </view>
+    </view>
+  </view>
+</template>

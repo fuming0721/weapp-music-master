@@ -30,17 +30,16 @@ const getBannerImg = (parmas) => { wxRequst(parmas, baseUrl + 'banner') };
 // 推荐音乐
 const getRecommendMusicList = (parmas) => { wxRequst(parmas, baseUrl + 'personalized') };
 // 推荐 MV
-const getRecommendMV = (parmas) => { wxRequst(parmas, baseUrl + 'personalized/mv') };
-// 独家放送
-const getPrivateContent = (parmas) => { wxRequst(parmas, baseUrl + 'personalized/privatecontent')};
+const getRecommendMV = (parmas) => { wxRequst(parmas, baseUrl + '/mv/first') };
 // 获取歌单列表
 const getMusicList = (parmas) => { wxRequst(parmas, baseUrl + '/playlist/detail') };
-
+// 获取精品歌单列表
+const getBoutiqueList = (parmas) => { wxRequst(parmas, baseUrl + '/top/playlist/highquality')};
 
 module.exports = {
   getBannerImg,
   getRecommendMusicList,
   getRecommendMV,
-  getPrivateContent,
-  getMusicList
+  getMusicList,
+  getBoutiqueList
 }
