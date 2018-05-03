@@ -2,23 +2,29 @@
 <wxs src="../../filter/filter.wxs" module="filter" />
 <view class="videoBox">
   <block wx:for="{{recommendMVList}}" wx:key="{{*index}}">
-    <view class='recommendMV_item'>
-      <view class='recommendMV_item_imgbox'>
+    <view class='recommendMV_item' >
+      <view class='recommendMV_item_imgbox'  bindtap='govideoDetai' data-id='{{item.id}}'>
         <image src='{{item.cover}}' class='recommendMV_item_img' mode="widthFix" lazy-load='true'></image>
-
+        <!-- 播放量 -->
         <view class='playCount_box'>
           <view class='iconfont icon-shipin4 playCount_icon'></view>
           <text class='playCount'>{{filter.over10000(item.playCount)}}</text>
         </view>
 
+        <!-- name -->
+        <view class='artistName'>
+          <text>{{item.artistName}}</text>
+
+        </view>
+
+        <view class='playBtn'>
+          <view class='iconfont icon-bofang'></view>
+        </view>
       </view>
 
       <view class='musicListitem_name'>
-        <text>{{item.name}}</text>
-        <view>
-          <view>点赞96</view>
-          <view>点赞98</view>
-        </view>
+        <text class='itemName'>{{item.name}}</text>
+        <text wx:if="{{item.briefDesc}}">{{item.briefDesc}}</text>
       </view>
     </view>
   </block>

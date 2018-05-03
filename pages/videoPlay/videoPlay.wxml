@@ -1,0 +1,53 @@
+<!--pages/videoPlay/videoPlay.wxml-->
+<import src='./template/comment' />
+<view class='videoBox'>
+  <video class='video' src="{{videoUrl}}" duration="{{videoData.duration/1000}}" autoplay></video>
+
+  <view class='dosomething'>
+    <text class='videoName'>{{videoData.name}}</text>
+    <view class='artistName'>歌手：
+      <text>{{videoData.artistName}}</text> </view>
+    <view class='videoNum'>
+      <view class='videoissued'>发行：
+        <text>2014-22-1</text>
+      </view>
+      <view class='playcount'>播放：
+        <text>21009</text>
+      </view>
+    </view>
+
+    <view class='do'>
+      <view class='do-do'>
+        <view class='iconfont icon-zan'></view>
+        <text>{{videoData.likeCount}}</text>
+      </view>
+      <view class='do-do'>
+        <view class='iconfont icon-jiaru'></view>
+        <text>{{videoData.subCount}}</text>
+      </view>
+      <view class='do-do'>
+        <view class='iconfont icon-pinglun_small'></view>
+        <text>{{videoData.commentCount}}</text>
+      </view>
+      <view class='do-do' bindtap='onShareAppMessage'>
+        <view class='iconfont icon-zhuanfa'></view>
+        <text>{{videoData.shareCount}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='commentBox'>
+    <view class='hotComment'>
+      <view class='commentTitle'>精彩评论</view>
+      <block wx:for="{{hotComments}}" wx:key="{{*index}}">
+        <template is='comment'  data="{{item}}"/>
+      </block>
+    </view>
+    <view class='newComment'>
+      <view class='commentTitle'>最新评论({{total}})</view>
+      <block wx:for="{{comments}}" wx:key="{{**index}}">
+         <template is='comment' data="{{item}}"/> 
+      </block>
+    </view>
+  </view>
+
+</view>

@@ -30,7 +30,18 @@ var formatmusicTime = function (value) {
   }
   return fen + ":" + miao;
 }
+
+var DateFr = function (time) {
+  var date = getDate(time);
+  var M = date.getMonth() + 1;
+  var y = date.getFullYear();
+  var d = date.getDate();
+  if (M < 10) M = "0" + M;
+  if (d < 10) d = "0" + d;
+  return y + "年" + M + "月" + d + "日";
+}
 module.exports = {
   over10000: over10000,
-  formatmusicTime: formatmusicTime
+  formatmusicTime: formatmusicTime,
+  DateFr: DateFr
 }

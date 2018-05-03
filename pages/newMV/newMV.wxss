@@ -1,0 +1,4 @@
+/* pages/newMV/newMV.wxss */
+.newMV{
+  width: 750rpx;
+}

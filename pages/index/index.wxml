@@ -26,7 +26,7 @@
     </view>
 
     <!-- 圈圈nav导航 -->
-    <view class='quanNav'>
+    <!-- <view class='quanNav'>
       <block wx:for="{{iconNav}}" wx:key="{{*index}}">
         <navigator url='{{item.url}}' class='quanNavitem'>
           <view class='nav_icon'>
@@ -35,13 +35,11 @@
           <text class='navicon-text'>{{item.name}}</text>
         </navigator>
       </block>
-    </view>
+    </view> -->
 
     <!--推荐歌单-->
     <view class='music_list'>
-      <navigator class='list_title' url='../../../../allMusiclist/allmusicList'>推荐歌单
-        <view class='iconfont icon-xiangyou'></view>
-      </navigator>
+      <text class='list_title'>推荐歌单</text>
       <view class='music_list_ul'>
         <block wx:for="{{recommendMusicList}}" wx:key="{{*index}}">
           <template is="musicItem" data="{{item}}" />

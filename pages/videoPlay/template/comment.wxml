@@ -1,0 +1,33 @@
+<wxs src="../../../filter/filter.wxs" module="filter" />
+
+<template name="comment">
+  <view class='commentitem'>
+    <view class='commentitem-img'>
+      <image src='{{item.user.avatarUrl}}'></image>
+    </view>
+
+    <view class='commentinfo'>
+      <view class='commentinfo-top'>
+        <view class='top-name'>
+          <text class='name-name'>{{item.user.nickname}}</text>
+          <text class='name-time'>{{filter.DateFr(item.time)}}</text>
+        </view>
+        <view class='top-zan'>
+          <text class='likecount'>{{item.likedCount}}</text>
+          <view class='iconfont icon-zan dianzan'></view>
+        </view>
+      </view>
+
+      <view class='commentContent'>
+        {{item.content}}
+        <block wx:if="{{item.beReplied.length}}">
+          <view class='replay'>
+            <text class='replayName'>{{item.beReplied[0].user.nickname}}</text>
+            <text class='replayContent'>{{item.beReplied[0].content}}</text>
+          </view>
+        </block>
+
+      </view>
+    </view>
+  </view>
+</template>

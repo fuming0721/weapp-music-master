@@ -1,0 +1,9 @@
+<!--pages/newMV/newMV.wxml-->
+
+<swiper class='newMV' bindanimationfinish="change">
+  <block wx:for="{{mvinfo}}" wx:key="{{*index}}">
+    <swiper-item>
+      <image src='{{item.cover}}'></image>
+    </swiper-item>
+  </block>
+</swiper>

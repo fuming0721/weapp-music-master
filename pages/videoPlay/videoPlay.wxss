@@ -1,0 +1,164 @@
+/* pages/videoPlay/videoPlay.wxss */
+
+.video {
+  width: 100%;
+  height: 450rpx;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+}
+
+.dosomething {
+  padding: 20rpx;
+  box-sizing: border-box;
+  margin-top: 450rpx;
+}
+
+.videoName {
+  font-size: 32rpx;
+  color: #333;
+  display: block;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-weight: bold;
+}
+
+.artistName {
+  font-size: 24rpx;
+  color: #333;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.artistName text {
+  color: #37afff;
+}
+
+.videoNum {
+  height: 60rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.videoNum view {
+  font-size: 24rpx;
+  color: #999;
+  width: 300rpx;
+}
+
+.do {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 140rpx;
+}
+
+.do-do {
+  display: flex;
+  width: 25%;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  background-color: transparent;
+  border: none;
+}
+
+.do-do view {
+  font-size: 36rpx;
+  color: #333;
+}
+
+.do-do text {
+  font-size: 20rpx;
+  color: #999;
+  margin-top: 10rpx;
+}
+.commentTitle{
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 24rpx;
+  color: #333;
+  background-color: #f2f2f2;  
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  position: sticky;
+  top: 450rpx;
+}
+.commentitem{
+  display: flex;
+  justify-content: flex-start;
+  padding: 20rpx 20rpx 20rpx 0;
+  box-sizing: border-box;
+}
+.commentitem-img{
+  height: 100%;
+  width: 100rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-shrink: 0;
+}
+.commentitem image{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.commentinfo{
+  border-bottom: 1px solid #f2f2f2;
+  width: 630rpx;
+}
+.commentinfo-top{
+  display: flex;
+  justify-content: space-between;
+  height: 60rpx;
+}
+.top-name{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between
+}
+.name-name{
+  font-size: 24rpx;
+  color: #666;
+}
+.name-time{
+  font-size: 20rpx;
+  color: #999;
+}
+.top-zan{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.likecount{
+  font-size: 24rpx;
+  color: #999;
+}
+.dianzan{
+  font-size: 26rpx;
+  color: #999;
+  margin-bottom: 5rpx;
+  margin-left: 6rpx;
+}
+.commentContent{
+  font-size: 28rpx;
+  color: #333;
+  padding: 20rpx 0;
+  line-height: 1.8;
+}
+.replay{
+  border: 1px solid #f2f2f2;
+  padding: 15rpx 20rpx;
+  box-sizing: border-box;
+  margin-top: 20rpx;
+}
+.replayName{
+  color: #1182C4;
+  margin-right: 20rpx;
+}
+.replayContent{
+  color: #999;
+}

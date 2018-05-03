@@ -20,16 +20,13 @@ Page({
         this.setData({
           recommendMVList: resp.data.data
         })
-        console.log(resp)
       }
     })
   },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
+  // 播放视频
+  govideoDetai(options){
+    wx.navigateTo({
+      url: `../videoPlay/videoPlay?videoid=${options.currentTarget.dataset.id}`,
     })
   },
   /**

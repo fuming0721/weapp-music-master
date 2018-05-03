@@ -5,7 +5,10 @@
     "pages/search/search",
     "pages/musicList/musicList",
     "pages/audioPage/audioPage",
-    "pages/allMusiclist/allmusicList"
+    "pages/allMusiclist/allmusicList",
+    "pages/videoPlay/videoPlay",
+    "pages/aboutMe/aboutMe",
+    "pages/newMV/newMV"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -27,28 +30,28 @@
         "text": "发现"
       },
       {
+        "pagePath": "pages/allMusiclist/allmusicList",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my_active.png",
+        "text": "歌单"
+      },
+      {
         "pagePath": "pages/video/video",
         "iconPath": "images/video.png",
         "selectedIconPath": "images/video_active.png",
         "text": "视频"
       },
       {
-        "pagePath": "pages/video/video",
-        "iconPath": "images/my.png",
-        "selectedIconPath": "images/my_active.png",
-        "text": "我的"
-      },
-      {
-        "pagePath": "pages/video/video",
-        "iconPath": "images/friend.png",
-        "selectedIconPath": "images/friend_active.png",
-        "text": "朋友"
-      },
-      {
-        "pagePath": "pages/video/video",
+        "pagePath": "pages/newMV/newMV",
         "iconPath": "images/account.png",
         "selectedIconPath": "images/account_active.png",
-        "text": "账号"
+        "text": "最新MV"
+      },
+      {
+        "pagePath": "pages/aboutMe/aboutMe",
+        "iconPath": "images/account.png",
+        "selectedIconPath": "images/account_active.png",
+        "text": "我的"
       }
     ]
   }
