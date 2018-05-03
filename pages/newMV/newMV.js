@@ -7,7 +7,7 @@ Page({
    */
   data: {
     mvinfo:[],
-    limit: 2
+    limit: 10
   },
 
   /**
@@ -22,21 +22,21 @@ Page({
         limit: this.data.limit
       },
       success:resp=>{
-        console.log(resp.data.data)
-        var last = resp.data.data[resp.data.data.length-1];
-        console.log(last)
         this.setData({
           mvinfo: resp.data.data
         })
+        console.log(resp)
       }
     })
   },
   change(option){
-    console.log(option.detail.current)
+    // console.log(option.detail.current)
+
     if (option.detail.current+1 == this.data.limit){
       this.setData({
-        limit: this.data.limit + 1
+        limit: this.data.limit + 10
       })
+      console.log(option)
       this.getNewMV()
     }
     
