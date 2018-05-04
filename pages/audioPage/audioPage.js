@@ -55,6 +55,10 @@ Page({
         playtime: player.currentTime
       })
     })
+    // 播放结束后自动下一曲
+    player.onEnded(() => {
+      this.nextMusic()
+    })
     // 设置navbarTitle
     wx.setNavigationBarTitle({
       title: cerrentMusic.name
@@ -99,6 +103,7 @@ Page({
     }
     this.palyMusic()
   },
+  
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -144,7 +149,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
+  onShareAppMessage (resp) {
+   
   }
 })

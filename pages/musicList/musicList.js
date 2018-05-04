@@ -14,7 +14,8 @@ Page({
     creatorName: "",       //歌单创建者名字
     usericon: "",           //创建者头像
     flag: false,
-    cerrentMusic: -1
+    cerrentMusic: -1,
+    id:0
   },
 
   /**
@@ -22,6 +23,9 @@ Page({
    */
   onLoad: function (options) {
     this.loadMusicList(options.musicListID)
+    this.setData({
+      id: options.musicListID
+    })
   },
 
   // 根据接收到的歌单id，请求数据
@@ -31,8 +35,14 @@ Page({
         id: id
       },
       success: resp => {
+        var musicList = [];
+        if (resp.data.result.trackCount >= 60){
+          musicList = resp.data.result.tracks.slice(0,60)
+        }else{
+          musicList = resp.data.result.tracks
+        }
         this.setData({
-          songListArr: resp.data.result.tracks,
+          songListArr: musicList,
           playCount: resp.data.result.playCount,
           listName: resp.data.result.name,
           coverImgUrl: resp.data.result.coverImgUrl,
@@ -40,7 +50,7 @@ Page({
           usericon: resp.data.result.creator.avatarUrl,
           flag: true
         });
-        app.globalData.musicListArr = resp.data.result.tracks;
+        app.globalData.musicListArr = musicList;
       }
     })
   },
@@ -105,8 +115,15 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-    
+  onShareAppMessage(res) {
+    return {
+      title: this.data.listName,
+      imageUrl: this.data.coverImgUrl,
+      path: '/page/musicList/musicList?musicListID=' + this.data.id,
+      success: function (res) {
+        console.log(res)
+      },
+    }
   }
   
 })

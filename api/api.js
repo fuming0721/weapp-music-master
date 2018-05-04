@@ -1,10 +1,10 @@
 const baseUrl = "http://47.98.103.249/api/";
 
 const wxRequst = (params, url) => {
-  // wx.showToast({
-  //   title: '加载中...',
-  //   icon: 'loading'
-  // });
+  wx.showToast({
+    title: '加载中...',
+    icon: 'loading'
+  });
   wx.request({
     url: url,
     method: params.method || 'GET',
@@ -41,8 +41,10 @@ const getVideo = (parmas) => { wxRequst(parmas, baseUrl + 'mv')};
 const videobaseUrl = baseUrl + 'mv/url?url='
 // 获取mv评论
 const getVideoComment = (parmas) => { wxRequst(parmas, baseUrl + 'comment/mv') };
-// 获取最新mv
-const getNewMV = (parmas) => { wxRequst(parmas, baseUrl + 'mv/first') };
+// 获取热门歌手
+const getArtisttoplist = (parmas) => { wxRequst(parmas, baseUrl + 'top/artists') };
+// 获取热门歌手的mv
+const getArtistMV = (parmas) => { wxRequst(parmas, baseUrl + 'artist/mv') };
 
 module.exports = {
   getBannerImg,
@@ -53,5 +55,6 @@ module.exports = {
   getVideo,
   videobaseUrl,
   getVideoComment,
-  getNewMV
+  getArtisttoplist,
+  getArtistMV
 }

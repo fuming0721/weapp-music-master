@@ -1,51 +1,63 @@
-// pages/newMV/newMV.js
-import api from "../../api/api.js"
+// pages/topList/topList.js
+import api from '../../api/api.js'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    mvinfo:[],
-    limit: 10
+    offset:0,
+    list:[],
+    innerHeight:0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    this.getNewMV()
+  onLoad (options) {
+    this.getTopList()
+    // 设置页面高度
+    wx.getSystemInfo({
+      success: res => {
+        this.setData({
+          innerHeight: res.windowHeight
+        })
+      },
+    })
   },
-  getNewMV(){
-    api.getNewMV({
+  getTopList(){
+    api.getArtisttoplist({
       data:{
-        limit: this.data.limit
+        offset: this.data.offset,
+        limit: 20
       },
       success:resp=>{
+        this.data.list = this.data.list.concat(resp.data.artists)
         this.setData({
-          mvinfo: resp.data.data
+          list: this.data.list
         })
-        console.log(resp)
       }
     })
   },
-  change(option){
-    // console.log(option.detail.current)
-
-    if (option.detail.current+1 == this.data.limit){
+  change(opt){
+    if (opt.detail.current == this.data.list.length-5){
       this.setData({
-        limit: this.data.limit + 10
-      })
-      console.log(option)
-      this.getNewMV()
+        offset: this.data.offset + 20
+      });
+      this.getTopList()
     }
-    
+  },
+  go(opt){
+    // console.log(opt.currentTarget.dataset.id)
+    wx.navigateTo({
+      url: `../mvList/mvList?id=${opt.currentTarget.dataset.id}&name=${opt.currentTarget.dataset.name}`
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+  
   },
 
   /**

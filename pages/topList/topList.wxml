@@ -1,0 +1,20 @@
+<!--pages/topList/topList.wxml-->
+<view>
+  <swiper bindanimationfinish="change" class='topList' previous-margin="60rpx" next-margin="60rpx" style='height:{{innerHeight}}px'>
+    <block wx:for="{{list}}" wx:key="{{*index}}">
+      <swiper-item class="topListitem" bindtap="go" data-id="{{item.id}}" data-name="{{item.name}}">
+        <view class='topListitem_center'>
+          <image class='topListimg' src="{{item.img1v1Url}}"></image>
+          <view class='topNum'>NO.{{index+1}}</view>
+          <view class='nameBox'>
+            <view class='name'>{{item.name}}</view>
+            <view class='smallName' wx:if="{{item.alias.length}}">({{item.alias[0]}})</view>
+          </view>
+          <view class='bofang'>
+            <view class='iconfont icon-bofang'></view>
+          </view>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
