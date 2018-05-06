@@ -1,5 +1,0 @@
-<!--pages/aboutMe/aboutMe.wxml-->
-<view>
-  {{userinfo.nickName}}
-  <image src='{{userinfo.avatarUrl}}'></image>
-</view>

@@ -25,6 +25,8 @@ Page({
     })
     this.getVideoData(options.videoid);
     this.getComment();
+    // 如果有音乐播放， 就停止音乐
+    wx.getBackgroundAudioManager().stop()
   },
 
   // 获取单个视频数据

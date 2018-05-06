@@ -33,9 +33,6 @@ Page({
         })
       },
     })
-
-
-
     // 开始播放
     this.palyMusic();
 
@@ -55,6 +52,13 @@ Page({
         playtime: player.currentTime
       })
     })
+    
+    player.onStop(() => {
+      app.globalData.isplaying = !player.paused
+      this.setData({
+        isplaying: !player.paused
+      })
+    })
     // 播放结束后自动下一曲
     player.onEnded(() => {
       this.nextMusic()
@@ -64,7 +68,7 @@ Page({
       title: cerrentMusic.name
     })
   },
-
+  
   // slider 的滑动
   sliderChange(e) {
     player.seek(e.detail.value)

@@ -7,7 +7,6 @@
     "pages/audioPage/audioPage",
     "pages/allMusiclist/allmusicList",
     "pages/videoPlay/videoPlay",
-    "pages/aboutMe/aboutMe",
     "pages/topList/topList",
     "pages/mvList/mvList"
   ],
@@ -47,12 +46,6 @@
         "iconPath": "images/friend.png",
         "selectedIconPath": "images/friend_active.png",
         "text": "歌 手"
-      },
-      {
-        "pagePath": "pages/aboutMe/aboutMe",
-        "iconPath": "images/account.png",
-        "selectedIconPath": "images/account_active.png",
-        "text": "我 的"
       }
     ]
   }
