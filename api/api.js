@@ -45,6 +45,11 @@ const getVideoComment = (parmas) => { wxRequst(parmas, baseUrl + 'comment/mv') }
 const getArtisttoplist = (parmas) => { wxRequst(parmas, baseUrl + 'top/artists') };
 // 获取热门歌手的mv
 const getArtistMV = (parmas) => { wxRequst(parmas, baseUrl + 'artist/mv') };
+// 获取开始搜索
+const searchStart = (parmas) => { wxRequst(parmas, baseUrl + 'search') };
+// 获取热门搜索
+const getHotSearch = (parmas) => { wxRequst(parmas, baseUrl + 'personalized/newsong') };
+
 
 module.exports = {
   getBannerImg,
@@ -56,5 +61,7 @@ module.exports = {
   videobaseUrl,
   getVideoComment,
   getArtisttoplist,
-  getArtistMV
+  getArtistMV,
+  searchStart,
+  getHotSearch
 }

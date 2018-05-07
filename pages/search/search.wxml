@@ -1,2 +1,17 @@
 <!--pages/search/search.wxml-->
-<text>大哥我是搜索页</text>
+<view>
+  <view class='topSearch'>
+    <form bindreset="clearValue" class='inputform'>
+      <input class='inputB' placeholder-class="holderInput" placeholder="输入您想要搜索的内容" auto-focus confirm-type="search" bindconfirm="startSearch" bindinput="inputC" value="{{searchValue}}"></input>
+      <view class='iconfont icon-sousuo sousuo'></view>
+      <button class='iconfont icon-shanchu clearBtn' formType="reset" wx:if="{{haveValue}}"></button>
+    </form>
+    <view class='cansBtn' bindtap='back'>取消</view>
+  </view>
+  <view class='searchBottom' wx:if="{{showHotsearch}}">
+    <view class='hotsearchtitle'>热门搜索</view>
+    <block wx:for="{{hotsearch}}" wx:key="{{*index}}">
+      <text class='hotsearchitem' bindtap='hotwordsearch' data-value='{{item.name}}'>{{item.name}}</text>
+    </block>
+  </view>
+</view>

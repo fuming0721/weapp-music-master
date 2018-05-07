@@ -100,7 +100,7 @@
   position: absolute;
   width: 100%;
   top: 0;
-  background-color: #d81e06;
+  background-color: #EA584F;
 }
 .bannerSwiper{
   width: 100%;
