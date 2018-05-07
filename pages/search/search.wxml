@@ -1,4 +1,5 @@
 <!--pages/search/search.wxml-->
+<import src="./template/searchList" />
 <view>
   <view class='topSearch'>
     <form bindreset="clearValue" class='inputform'>
@@ -12,6 +13,16 @@
     <view class='hotsearchtitle'>热门搜索</view>
     <block wx:for="{{hotsearch}}" wx:key="{{*index}}">
       <text class='hotsearchitem' bindtap='hotwordsearch' data-value='{{item.name}}'>{{item.name}}</text>
+    </block>
+  </view>
+
+  <view wx:else>
+    <view>单曲</view>
+    <view>歌单</view>
+    <view>专辑</view>
+    <view>视频</view>
+    <block wx:for="{{searchList}}" wx:key="{{*index}}">
+      <template is="searchList" data="{{item}}" />
     </block>
   </view>
 </view>

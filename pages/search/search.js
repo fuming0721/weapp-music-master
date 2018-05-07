@@ -32,8 +32,9 @@ Page({
         limit: this.data.limit
       },
       success: resp => {
+        console.log(resp.data.result)
         this.setData({
-          searchList: resp.data.result,
+          searchList: resp.data.result.songs,
           showHotsearch: false
         })
       }
@@ -49,7 +50,7 @@ Page({
       success: resp => {
         console.log(resp.data.result)
         this.setData({
-          searchList: resp.data.result,
+          searchList: resp.data.result.songs,
           showHotsearch: false
         })
       }

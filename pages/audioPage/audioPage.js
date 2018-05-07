@@ -8,7 +8,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    // musicData: {},
     innerHeight: "",
     playtime: 0,
     isplaying: false,
@@ -22,8 +21,7 @@ Page({
   onLoad: function (options) {
     this.setData({
       musicListArr: app.globalData.musicListArr,
-      musicIndex: options.musicindex,
-      // musicData: app.globalData.musicListArr[options.musicindex]
+      musicIndex: options.musicindex
     })
     // 设置页面高度
     wx.getSystemInfo({
