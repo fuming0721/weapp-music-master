@@ -10,8 +10,13 @@ Page({
     limit: 30,
     hotsearch: [],
     searchValue: "",
-    searchList:[],
-    showHotsearch: true
+    songArr: [],   //歌曲
+    musicListArr: [],   //歌单
+    albumArr: [],   //专辑
+    videoArr: [], //视频
+    showHotsearch: true,
+    searchType: 1,
+    navLinePosition: '53rpx'
   },
 
   /**
@@ -29,12 +34,13 @@ Page({
     api.searchStart({
       data: {
         keywords: opt.currentTarget.dataset.value,
-        limit: this.data.limit
+        limit: this.data.limit,
+        type: 1
       },
       success: resp => {
         console.log(resp.data.result)
         this.setData({
-          searchList: resp.data.result.songs,
+          songArr: resp.data.result.songs,
           showHotsearch: false
         })
       }
@@ -45,12 +51,13 @@ Page({
     api.searchStart({
       data: {
         keywords: opt.detail.value,
-        limit: this.data.limit
+        limit: this.data.limit,
+        type: this.data.searchType
       },
       success: resp => {
         console.log(resp.data.result)
         this.setData({
-          searchList: resp.data.result.songs,
+          songArr: resp.data.result.songs,
           showHotsearch: false
         })
       }
@@ -60,6 +67,7 @@ Page({
   gethotsearch() {
     api.getHotSearch({
       success: resp => {
+        console.log(resp)
         this.setData({
           hotsearch: resp.data.result
         })
@@ -85,6 +93,35 @@ Page({
       haveValue: false,
       showHotsearch: true
     })
+  },
+  // nav点击
+  changeNav(opt){
+    switch (opt.currentTarget.dataset.type) {
+      case '1':
+        this.setData({
+          navLinePosition: '53rpx',
+          searchType: opt.currentTarget.dataset.type
+        })
+        break;
+      case '10':
+        this.setData({
+          navLinePosition: '240rpx',
+          searchType: opt.currentTarget.dataset.type
+        })
+        break;
+      case '1002':
+        this.setData({
+          navLinePosition: '428rpx',
+          searchType: opt.currentTarget.dataset.type
+        })
+        break;
+      case '1004':
+        this.setData({
+          navLinePosition: '616rpx',
+          searchType: opt.currentTarget.dataset.type
+        })
+        break;
+    }
   },
   // 返回上一页
   back() {

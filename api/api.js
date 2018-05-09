@@ -1,4 +1,4 @@
-const baseUrl = "http://47.98.103.249/api/";
+const baseUrl = "http://www.tuwencity.com/api/";
 
 const wxRequst = (params, url) => {
   wx.showToast({

@@ -2,7 +2,7 @@
 
 .topSearch {
   height: 80rpx;
-  background-color: #EA584F;
+  background-color: #ea584f;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -37,7 +37,8 @@
   line-height: 80rpx;
   text-align: left;
 }
-.sousuo{
+
+.sousuo {
   position: absolute;
   height: 60rpx;
   width: 60rpx;
@@ -49,6 +50,7 @@
   color: #fff;
   left: 26rpx;
 }
+
 .clearBtn {
   position: absolute;
   right: 120rpx;
@@ -72,21 +74,55 @@
   font-size: 24rpx;
   opacity: 0.6;
 }
-.searchBottom{
+
+.searchBottom {
   padding: 30rpx;
 }
-.hotsearchtitle{
+
+.hotsearchtitle {
   font-size: 28rpx;
   margin-bottom: 20rpx;
 }
-.hotsearchitem{
+
+.hotsearchitem {
   display: inline-block;
-  margin: 0 40rpx;
+  margin: 0rpx 20rpx;
+  margin-bottom: 20rpx;
   font-size: 24rpx;
-  height: 40rpx;
+  /* height: 40rpx; */
   color: #666;
   border: 1px solid #f2f2f2;
   padding: 0 20rpx;
   border-radius: 40rpx;
   line-height: 40rpx;
 }
+
+.searchNav {
+  height: 80rpx;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ea584f;
+  position: relative;
+}
+
+.searchNav text {
+  width: 25%;
+  text-align: center;
+  font-size: 28rpx;
+  color: #fff;
+  height: 100%;
+  line-height: 80rpx;
+}
+
+.navLine {
+  height: 8rpx;
+  background-color: #fff;
+  width: 80rpx;
+  position: absolute;
+  bottom: 8rpx;
+  border-radius: 8rpx;
+  transition: transform 0.3s;
+}
+
