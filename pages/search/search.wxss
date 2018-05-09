@@ -125,4 +125,17 @@
   border-radius: 8rpx;
   transition: transform 0.3s;
 }
-
+.listBox{
+  width: 750rpx;
+  position: relative;
+  height: 100%;
+}
+.listBoxcenter{
+  width: 3000rpx;
+  position: absolute;
+  display: flex;
+  transition: transform 0.2s;
+}
+.centeritem{
+  width: 750rpx;
+}

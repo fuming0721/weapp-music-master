@@ -27,26 +27,29 @@
       <text bindtap='changeNav' data-type='1004'>视频</text>
       <view class='navLine' style='transform:translateX({{navLinePosition}})'></view>
     </view>
-
-    <view class='songBox' wx:if="{{searchType == 1}}">
-      <block wx:for="{{songArr}}" wx:key="{{*index}}">
-        <template is="songList" data="{{item}}" />
-      </block>
-    </view>
-    <view class='musiclistBox' wx:elif="{{searchType == 10}}">
-      <block wx:for="{{musicListArr}}" wx:key="{{*item}}">
-        <template is="musicList" data="{{item}}" />
-      </block>
-    </view>
-    <view class='albumBox' wx:elif="{{searchType == 1002}}">
-      <block wx:for="{{albumArr}}" wx:key="{{%index}}">
-        <template is="aldumList" data="{{item}}" />
-      </block>
-    </view>
-    <view class='videoBox' wx:else>
-      <block wx:for="{{videoArr}}" wx:key="{{%item}}">
-        <template is="videoList" data="{{item}}" />
-      </block>
+    <view class='listBox'>
+      <view class='listBoxcenter' style='transform:translateX({{positionLeft}})'>
+        <view class='songBox centeritem' >
+          <block wx:for="{{songArr}}" wx:key="{{*index}}">
+            <template is="songList" data="{{item}}" />
+          </block>
+        </view>
+        <view class='musiclistBox centeritem' >
+           <block wx:for="{{musicListArr}}" >
+            <template is="musicList" data="{{item}}" />
+          </block> 
+        </view>
+        <view class='albumBox centeritem'>
+           <block wx:for="{{albumArr}}" wx:key="{{%index}}">
+            <template is="aldumList" data="{{item}}" />
+          </block> 
+        </view>
+        <view class='videoBox centeritem'>
+           <block wx:for="{{videoArr}}" wx:key="{{%item}}">
+            <template is="videoList" data="{{item}}" />
+          </block> 
+        </view>
+      </view>
     </view>
   </view>
 </view>

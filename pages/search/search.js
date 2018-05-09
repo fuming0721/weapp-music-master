@@ -7,6 +7,7 @@ Page({
    */
   data: {
     haveValue: false,
+    keywords:'',
     limit: 30,
     hotsearch: [],
     searchValue: "",
@@ -16,7 +17,12 @@ Page({
     videoArr: [], //视频
     showHotsearch: true,
     searchType: 1,
-    navLinePosition: '53rpx'
+    navLinePosition: '53rpx',
+    positionLeft: 0,
+    songArrOffeset:0,
+    musicListArrOffeset:0,
+    albumArrOffeset:0,
+    videoArrOffeset:0
   },
 
   /**
@@ -31,28 +37,29 @@ Page({
       searchValue: opt.currentTarget.dataset.value,
       haveValue: true
     });
-    api.searchStart({
-      data: {
-        keywords: opt.currentTarget.dataset.value,
-        limit: this.data.limit,
-        type: 1
-      },
-      success: resp => {
-        console.log(resp.data.result)
-        this.setData({
-          songArr: resp.data.result.songs,
-          showHotsearch: false
-        })
-      }
-    })
+
+    let keywords = opt.currentTarget.dataset.value;
+    let limit = this.data.limit;
+    let searchType = 1;
+    let offset = this.data.songArrOffeset * this.data.limit;
+    this.search(keywords, limit, searchType, offset)
   },
-  // 开始搜索
+  // 搜索框输入后按搜索按钮时的搜索，参数都应是默认值
   startSearch(opt) {
+    let keywords = opt.detail.value;
+    let limit = this.data.limit;
+    let searchType = this.data.searchType;
+    let offset = this.data.songArrOffeset * this.data.limit
+    this.search(keywords, limit, searchType, offset);
+  },
+  // 实际进行搜索的函数
+  search(keywords, limit=30, type=1, offset=30){
     api.searchStart({
       data: {
-        keywords: opt.detail.value,
-        limit: this.data.limit,
-        type: this.data.searchType
+        keywords: keywords,
+        limit: limit,
+        type: type,
+        offset: offset
       },
       success: resp => {
         console.log(resp.data.result)
@@ -67,7 +74,6 @@ Page({
   gethotsearch() {
     api.getHotSearch({
       success: resp => {
-        console.log(resp)
         this.setData({
           hotsearch: resp.data.result
         })
@@ -100,25 +106,29 @@ Page({
       case '1':
         this.setData({
           navLinePosition: '53rpx',
-          searchType: opt.currentTarget.dataset.type
+          searchType: opt.currentTarget.dataset.type,
+          positionLeft: 0
         })
         break;
       case '10':
         this.setData({
           navLinePosition: '240rpx',
-          searchType: opt.currentTarget.dataset.type
+          searchType: opt.currentTarget.dataset.type,
+          positionLeft: '-750rpx'
         })
         break;
       case '1002':
         this.setData({
           navLinePosition: '428rpx',
-          searchType: opt.currentTarget.dataset.type
+          searchType: opt.currentTarget.dataset.type,
+          positionLeft:'-1500rpx'
         })
         break;
       case '1004':
         this.setData({
           navLinePosition: '616rpx',
-          searchType: opt.currentTarget.dataset.type
+          searchType: opt.currentTarget.dataset.type,
+          positionLeft: '-2250rpx'
         })
         break;
     }
