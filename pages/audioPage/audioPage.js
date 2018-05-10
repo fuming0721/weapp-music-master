@@ -12,7 +12,10 @@ Page({
     playtime: 0,
     isplaying: false,
     musicListArr: [],
-    musicIndex: 0
+    musicIndex: 0,
+    musicduration:0,
+    picUrl:'',
+    duration:0
   },
 
   /**
@@ -21,7 +24,8 @@ Page({
   onLoad: function (options) {
     this.setData({
       musicListArr: app.globalData.musicListArr,
-      musicIndex: options.musicindex
+      musicIndex: options.musicindex,
+      musicduration: options.duration || 0
     })
     // 设置页面高度
     wx.getSystemInfo({
@@ -37,11 +41,28 @@ Page({
   },
   // 开始播放
   palyMusic() {
-    let cerrentMusic = this.data.musicListArr[this.data.musicIndex];
+    let cerrentMusic = this.data.musicListArr[parseInt(this.data.musicIndex)];
     player.src = `https://music.163.com/song/media/outer/url?id=${cerrentMusic.id}.mp3`;
     player.title = cerrentMusic.name;
-    player.coverImgUrl = cerrentMusic.album.picUrl;
-    player.duration = cerrentMusic.duration;
+    // 来自于歌单
+    if (!cerrentMusic.al){
+      player.coverImgUrl = cerrentMusic.album.picUrl;
+      player.duration = cerrentMusic.duration;
+      this.setData({
+        picUrl: cerrentMusic.album.picUrl,
+        duration: cerrentMusic.duration
+      })
+    }else{
+      // 来自于搜索
+      player.coverImgUrl = cerrentMusic.al.picUrl;    
+      player.duration = parseInt(this.data.musicduration);
+      this.setData({
+        picUrl: cerrentMusic.al.picUrl,
+        duration: parseInt(this.data.musicduration)
+      })
+    }
+    
+    
     // 监听播放器的时间变化
     player.onTimeUpdate(() => {
       app.globalData.isplaying = !player.paused

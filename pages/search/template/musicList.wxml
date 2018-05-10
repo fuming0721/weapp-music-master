@@ -1,3 +1,14 @@
+<wxs src="../../../filter/filter.wxs" module="filter" />
 <template name="musicList">
-  哈哈哈
+  <view class='musicList_item' bindtap='goMusiclist' data-id='{{item.id}}'>
+    <image lazy-load src='{{item.coverImgUrl}}'></image>
+    <view class='musiclistItem_right'>
+      <text class='musiclistItem_name'>{{item.name}}</text>
+      <view class='musiclistItem_info'>
+        <text>{{item.trackCount}}首音乐 </text>
+        <text>by {{item.creator.nickname}}， </text>
+        <text>播放{{filter.over10000(item.playCount)}}次</text>
+      </view>
+    </view>
+  </view>
 </template>

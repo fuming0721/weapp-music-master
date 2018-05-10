@@ -1,12 +1,17 @@
 /* pages/search/search.wxss */
-
+.searchPage{
+  padding-top: 160rpx;
+}
 .topSearch {
   height: 80rpx;
   background-color: #ea584f;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 9;
 }
 
 .inputform {
@@ -104,7 +109,9 @@
   justify-content: space-between;
   align-items: center;
   background-color: #ea584f;
-  position: relative;
+  position: fixed;
+  top: 80rpx; 
+  z-index: 9;
 }
 
 .searchNav text {
@@ -125,17 +132,183 @@
   border-radius: 8rpx;
   transition: transform 0.3s;
 }
-.listBox{
+
+.listBox {
   width: 750rpx;
   position: relative;
   height: 100%;
 }
-.listBoxcenter{
+
+.listBoxcenter {
   width: 3000rpx;
   position: absolute;
   display: flex;
   transition: transform 0.2s;
+  bottom: 0;
+  top: 0;
+  overflow: visible;
 }
-.centeritem{
+
+.centeritem {
   width: 750rpx;
+  overflow-y: auto;
+  height: 750rpx;
+}
+
+.Listitem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16rpx 20rpx 16rpx 0;
+  margin-left: 20rpx;
+  width: 730rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.listItem-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.listItem-left text {
+  font-size: 26rpx;
+  color: #3e8ef2;
+}
+
+.albumName text {
+  font-size: 22rpx;
+  color: #999;
+}
+
+.musicList_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10rpx;
+  box-sizing: border-box;
+  height: 120rpx;
+}
+
+.musicList_item image {
+  width: 100rpx;
+  height: 100rpx;
+  flex-shrink: 0;
+  margin-right: 20rpx;
+}
+
+.musiclistItem_right {
+  width: 600rpx;
+  overflow: hidden;
+  height: 120rpx;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.musiclistItem_name {
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 16rpx;
+}
+
+.musiclistItem_info {
+  font-size: 24rpx;
+  color: #999;
+}
+.singerItem{
+  width: 224rpx;
+  padding: 12rpx;
+  box-sizing: border-box;
+  border: 1px solid #f2f2f2;
+  border-radius: 4px;
+  margin-bottom: 20rpx;
+  height: 300rpx;
+  margin-left: 19rpx;
+
+}
+.singerItem image{
+  width: 200rpx;
+  height: 200rpx;
+}
+.singerName{
+  font-size: 24rpx;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 63rpx;
+}
+.singerBox{
+  padding: 20rpx;
+  padding-left: 0;
+  display: flex;
+  box-sizing: border-box;
+  width: 750rpx;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start
+}
+.mvsItem{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 140rpx;
+  padding: 10rpx;
+  box-sizing: border-box;
+}
+.mvsLeft{
+  height: 120rpx;
+  width: 213rpx;
+  flex-grow: 0;
+  margin-right: 10rpx;
+  position: relative;
+}
+.mvsLeft image{
+  width: 213rpx;
+  height: 120rpx;
+  border-radius: 12rpx;
+}
+.mvsRight{
+  width: 500rpx;
+  padding-left: 10rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 140rpx;
+  border-bottom: 1px solid #f2f2f2;
+}
+.mvsRight_name{
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 20rpx;
+}
+.mvsRight_info{
+  font-size: 24rpx;
+  color: #999;
+}
+.mvsplayCount{
+  position: absolute;
+  top:0rpx;
+  right: 10rpx;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.mvsplayCount text{
+  font-size: 20rpx;
+  text-shadow: 1px 1px 4px #000;
+}
+.mvsplayCount .icon{
+  font-size: 24rpx;
+  text-shadow: 1px 1px 4px #000;
 }

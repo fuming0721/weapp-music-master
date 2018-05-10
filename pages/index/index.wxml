@@ -1,7 +1,7 @@
 <!--index.wxml-->
 
 <!--顶部搜索-->
-<import src='../common/topSearch/topsearch.wxml' />
+<import src='./template/topsearch.wxml' />
 
 <!--个性推荐-->
 <import src='./template/musicitem.wxml' />

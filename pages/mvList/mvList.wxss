@@ -85,3 +85,12 @@
   display: block;
   line-height: 40rpx;
 }
+.noMvs{
+  font-size: 24rpx;
+  color: #999;
+  width: 100%;
+  height: 750rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

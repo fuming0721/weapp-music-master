@@ -1,0 +1,6 @@
+<template name="singerList">
+  <view class='singerItem' bindtap='goSingerMv' data-id="{{item.id}}" data-name='{{item.name}}'>
+    <image src="{{item.img1v1Url}}"></image>
+    <view class='singerName'>{{item.name}}</view>
+  </view>
+</template>

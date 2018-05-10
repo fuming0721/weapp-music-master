@@ -49,6 +49,8 @@ const getArtistMV = (parmas) => { wxRequst(parmas, baseUrl + 'artist/mv') };
 const searchStart = (parmas) => { wxRequst(parmas, baseUrl + 'search') };
 // 获取热门搜索
 const getHotSearch = (parmas) => { wxRequst(parmas, baseUrl + 'personalized/newsong') };
+// 获取歌曲详情
+const getSongDetai = (parmas) => { wxRequst(parmas, baseUrl + 'song/detail') };
 
 
 module.exports = {
@@ -63,5 +65,6 @@ module.exports = {
   getArtisttoplist,
   getArtistMV,
   searchStart,
-  getHotSearch
+  getHotSearch,
+  getSongDetai
 }

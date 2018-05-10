@@ -1,3 +1,11 @@
 <template name="songList">
-  哈哈哈
+  <view class='Listitem' bindtap='playSong' data-itemid='{{item.id}}' data-duration='{{item.duration}}'>
+    <view class='listItem-left'>
+      <text>{{item.name}}</text>
+      <text class='albumName'>
+          <text>{{item.artists[0].name}} - </text><text>{{item.album.name}}</text>
+      </text>
+    </view>
+    <icon class='iconfont icon-bofang1'></icon>
+  </view>
 </template>

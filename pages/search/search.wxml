@@ -1,12 +1,12 @@
 <!--pages/search/search.wxml-->
 <import src="./template/songList" />
 <import src="./template/musicList" />
-<import src="./template/albumList" />
+<import src="./template/singerList" />
 <import src="./template/videoList" />
-<view>
+<view class='searchPage'>
   <view class='topSearch'>
     <form bindreset="clearValue" class='inputform'>
-      <input class='inputB' placeholder-class="holderInput" placeholder="输入您想要搜索的内容" auto-focus confirm-type="search" bindconfirm="startSearch" bindinput="inputC" value="{{searchValue}}"></input>
+      <input class='inputB' placeholder-class="holderInput" placeholder="输入您想要搜索的内容" auto-focus confirm-type="search" bindconfirm="startSearch" bindinput="inputC" value="{{keywords}}"></input>
       <view class='iconfont icon-sousuo sousuo'></view>
       <button class='iconfont icon-shanchu clearBtn' formType="reset" wx:if="{{haveValue}}"></button>
     </form>
@@ -15,39 +15,39 @@
   <view class='searchBottom' wx:if="{{showHotsearch}}">
     <view class='hotsearchtitle'>热门搜索</view>
     <block wx:for="{{hotsearch}}" wx:key="{{*index}}">
-      <text class='hotsearchitem' bindtap='hotwordsearch' data-value='{{item.name}}'>{{item.name}}</text>
+      <text class='hotsearchitem' bindtap='startSearch' data-value='{{item.name}}'>{{item.name}}</text>
     </block>
   </view>
 
   <view wx:else>
     <view class='searchNav'>
       <text bindtap='changeNav' data-type='1'>单曲</text>
-      <text bindtap='changeNav' data-type='10'>歌单</text>
-      <text bindtap='changeNav' data-type='1002'>专辑</text>
+      <text bindtap='changeNav' data-type='1000'>歌单</text>
+      <text bindtap='changeNav' data-type='100'>歌手</text>
       <text bindtap='changeNav' data-type='1004'>视频</text>
       <view class='navLine' style='transform:translateX({{navLinePosition}})'></view>
     </view>
     <view class='listBox'>
       <view class='listBoxcenter' style='transform:translateX({{positionLeft}})'>
-        <view class='songBox centeritem' >
+        <view class='songBox centeritem' style='height:{{innerHeight}}rpx'>
           <block wx:for="{{songArr}}" wx:key="{{*index}}">
             <template is="songList" data="{{item}}" />
           </block>
         </view>
-        <view class='musiclistBox centeritem' >
-           <block wx:for="{{musicListArr}}" >
+        <view class='musiclistBox centeritem' style='height:{{innerHeight}}rpx'>
+          <block wx:for="{{musicListArr}}" wx:key="{{%index}}">
             <template is="musicList" data="{{item}}" />
-          </block> 
+          </block>
         </view>
-        <view class='albumBox centeritem'>
-           <block wx:for="{{albumArr}}" wx:key="{{%index}}">
-            <template is="aldumList" data="{{item}}" />
-          </block> 
+        <view class='singerBox centeritem' style='height:{{innerHeight}}rpx'>
+          <block wx:for="{{singerArr}}" wx:key="{{%index}}">
+            <template is="singerList" data="{{item}}" />
+          </block>
         </view>
-        <view class='videoBox centeritem'>
-           <block wx:for="{{videoArr}}" wx:key="{{%item}}">
+        <view class='videoBox centeritem' style='height:{{innerHeight}}rpx'>
+          <block wx:for="{{videoArr}}" wx:key="{{%item}}">
             <template is="videoList" data="{{item}}" />
-          </block> 
+          </block>
         </view>
       </view>
     </view>

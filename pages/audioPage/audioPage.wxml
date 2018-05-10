@@ -2,7 +2,7 @@
 <wxs src="../../filter/filter.wxs" module="filter" />
 <view class="audioPage {{isplaying?'playing':''}}" style='height:{{innerHeight}}px'>
   <view class='bgImg'>
-    <image class='bgImg_img' src='{{musicListArr[musicIndex].album.picUrl}}' mode='top'></image>
+    <image class='bgImg_img' src='{{picUrl}}' mode='top'></image>
     <view class='bgcolor'></view>
   </view>
   <view class='player'>
@@ -10,7 +10,7 @@
   </view>
   <view class="coverImgbox {{isplaying?'musicisplay':'musicispaused'}}">
     <image class='coverbgImg' src='../../../images/heijiao.png'></image>
-    <image class='songcoverImg' src='{{musicListArr[musicIndex].album.picUrl}}'></image>
+    <image class='songcoverImg' src='{{picUrl}}'></image>
   </view>
 
   <view class='buttons'>
@@ -22,8 +22,8 @@
 
    <view class='songSliderbox'>
     <text>{{filter.formatmusicTime(playtime)}}</text>
-    <slider class='songSlider' min='0' max="{{musicListArr[musicIndex].duration/1000}}" value="{{playtime}}" bindchange="sliderChange" block-size="16" activeColor="#d81e06"></slider>
-    <text>{{filter.formatmusicTime(musicListArr[musicIndex].duration/1000)}}</text>
+    <slider class='songSlider' min='0' max="{{duration/1000}}" value="{{playtime}}" bindchange="sliderChange" block-size="16" activeColor="#d81e06"></slider>
+    <text>{{filter.formatmusicTime(duration/1000)}}</text>
   </view> 
   
   <view class='changeSong'>
