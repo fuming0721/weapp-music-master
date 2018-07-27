@@ -1,4 +1,4 @@
-const baseUrl = "http://www.tuwencity.com/api/";
+const baseUrl = "https://www.tuwencity.com";
 
 const wxRequst = (params, url) => {
   wx.showToast({
@@ -26,31 +26,31 @@ const wxRequst = (params, url) => {
 }
 
 // banner图片
-const getBannerImg = (parmas) => { wxRequst(parmas, baseUrl + 'banner') };
+const getBannerImg = (parmas) => { wxRequst(parmas, baseUrl + '/api/banner') };
 // 推荐音乐
-const getRecommendMusicList = (parmas) => { wxRequst(parmas, baseUrl + 'personalized') };
+const getRecommendMusicList = (parmas) => { wxRequst(parmas, baseUrl + '/api/personalized') };
 // 推荐 MV
-const getRecommendMV = (parmas) => { wxRequst(parmas, baseUrl + 'top/mv') };
+const getRecommendMV = (parmas) => { wxRequst(parmas, baseUrl + '/api/top/mv') };
 // 获取歌单列表
-const getMusicList = (parmas) => { wxRequst(parmas, baseUrl + 'playlist/detail') };
+const getMusicList = (parmas) => { wxRequst(parmas, baseUrl + '/api/playlist/detail') };
 // 获取精品歌单列表
-const getBoutiqueList = (parmas) => { wxRequst(parmas, baseUrl + 'top/playlist/highquality')};
+const getBoutiqueList = (parmas) => { wxRequst(parmas, baseUrl + '/api/top/playlist/highquality')};
 // 获取mv信息
-const getVideo = (parmas) => { wxRequst(parmas, baseUrl + 'mv')};
+const getVideo = (parmas) => { wxRequst(parmas, baseUrl + '/api/mv')};
 // 播放Mv
-const videobaseUrl = baseUrl + 'mv/url?url='
+const videobaseUrl = baseUrl + '/api/mv/url?url='
 // 获取mv评论
-const getVideoComment = (parmas) => { wxRequst(parmas, baseUrl + 'comment/mv') };
+const getVideoComment = (parmas) => { wxRequst(parmas, baseUrl + '/api/comment/mv') };
 // 获取热门歌手
-const getArtisttoplist = (parmas) => { wxRequst(parmas, baseUrl + 'top/artists') };
+const getArtisttoplist = (parmas) => { wxRequst(parmas, baseUrl + '/api/top/artists') };
 // 获取热门歌手的mv
-const getArtistMV = (parmas) => { wxRequst(parmas, baseUrl + 'artist/mv') };
+const getArtistMV = (parmas) => { wxRequst(parmas, baseUrl + '/api/artist/mv') };
 // 获取开始搜索
-const searchStart = (parmas) => { wxRequst(parmas, baseUrl + 'search') };
+const searchStart = (parmas) => { wxRequst(parmas, baseUrl + '/api/search') };
 // 获取热门搜索
-const getHotSearch = (parmas) => { wxRequst(parmas, baseUrl + 'personalized/newsong') };
+const getHotSearch = (parmas) => { wxRequst(parmas, baseUrl + '/api/personalized/newsong') };
 // 获取歌曲详情
-const getSongDetai = (parmas) => { wxRequst(parmas, baseUrl + 'song/detail') };
+const getSongDetai = (parmas) => { wxRequst(parmas, baseUrl + '/api/song/detail') };
 
 
 module.exports = {
